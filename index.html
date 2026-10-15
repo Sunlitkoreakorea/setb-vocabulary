@@ -1,0 +1,1409 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Set B 영단어 24세트, 600단어 적응형 학습하기">
+  <title>Set B Vocabulary · 전체 세트</title>
+  <style>
+:root {
+  --ink: #1f1830;
+  --muted: #7a7196;
+  --paper: #f4f0fb;
+  --panel: #fdfcff;
+  --line: #ddd4ef;
+  --forest: #3c2d80;
+  --lime: #ffd166;
+  --orange: #ef5da8;
+  --shadow: 0 18px 60px rgba(31, 24, 48, .10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 86% 4%, rgba(255,209,102,.38), transparent 25rem),
+    linear-gradient(180deg, #f6f2fd 0%, var(--paper) 100%);
+  font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+button, input, select { font: inherit; }
+button { color: inherit; }
+.shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 64px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.02em; }
+.mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: var(--forest); color: #fff; box-shadow: var(--shadow); }
+.source { color: var(--muted); font-size: 13px; }
+.hero { padding: 34px; border-radius: 28px; background: var(--forest); color: #fff; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; right: -70px; top: -125px; background: var(--lime); opacity: .92; }
+.eyebrow { color: var(--lime); font-size: 12px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+h1 { margin: 10px 0 8px; max-width: 720px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 6vw, 64px); line-height: .98; letter-spacing: -.045em; font-weight: 700; }
+.hero p { max-width: 640px; margin: 0; color: rgba(255,255,255,.75); line-height: 1.65; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.stat { padding: 8px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.08); font-size: 13px; }
+.workspace { display: grid; grid-template-columns: 280px minmax(0,1fr); gap: 22px; margin-top: 22px; align-items: start; }
+.sidebar, .content { background: rgba(253,252,255,.88); border: 1px solid rgba(221,212,239,.9); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
+.sidebar { position: sticky; top: 18px; border-radius: 22px; padding: 18px; }
+.label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.select, .search { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); padding: 12px 13px; outline: none; }
+.select:focus, .search:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(60,45,128,.12); }
+.set-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin-top: 16px; max-height: 310px; overflow: auto; padding-right: 3px; }
+.set-button { border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 4px; font-size: 12px; cursor: pointer; transition: .16s ease; }
+.set-button small { display: block; margin-top: 2px; color: #c23b5e; font-size: 8px; font-weight: 800; }
+.set-button.active small { color: var(--lime); }
+.set-button:hover { transform: translateY(-1px); border-color: var(--forest); }
+.set-button.active { background: var(--forest); color: #fff; border-color: var(--forest); }
+.wrong-summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; padding: 12px 13px; border: 1px solid #f3d0dc; border-radius: 12px; background: #fdeef2; }
+.wrong-summary span { color: var(--muted); font-size: 11px; }
+.wrong-summary strong { display: block; margin-top: 2px; color: #c23b5e; font-size: 20px; }
+.wrong-reset { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+.data-transfer { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.data-transfer-title { margin-bottom: 8px; color: var(--muted); font-size: 11px; font-weight: 800; }
+.data-transfer-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.data-transfer .button { padding: 9px 6px; font-size: 10px; }
+.shortcuts { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.7; }
+kbd { padding: 2px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; background: #fff; color: var(--ink); }
+.content { border-radius: 22px; padding: 26px; min-width: 0; }
+.content-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 14px 16px; }
+.content-head > div:first-child { flex: 1 1 240px; min-width: 0; }
+.set-title { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.04em; }
+.set-note { color: var(--muted); font-size: 13px; margin-top: 5px; line-height: 1.5; }
+.tabs { display: flex; flex: 0 0 auto; gap: 6px; padding: 5px; border-radius: 12px; background: #ebe6f7; }
+.tab { border: 0; border-radius: 9px; padding: 9px 13px; background: transparent; cursor: pointer; font-weight: 750; font-size: 13px; white-space: nowrap; }
+.tab.active { background: #fff; box-shadow: 0 4px 18px rgba(31,24,48,.08); }
+.panel { display: none; }
+.panel.active { display: block; }
+.progress-wrap { display: flex; align-items: center; gap: 12px; margin: 24px 0 12px; }
+.progress { flex: 1; height: 8px; overflow: hidden; background: #e3ddf4; border-radius: 999px; }
+.progress > span { display: block; height: 100%; border-radius: inherit; background: var(--orange); transition: width .25s ease; }
+.counter { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.flashcard { width: 100%; min-height: 350px; border: 1px solid var(--line); border-radius: 22px; background: #fff; padding: 30px; cursor: pointer; perspective: 1000px; box-shadow: 0 12px 36px rgba(31,24,48,.08); display: grid; place-items: center; text-align: center; position: relative; }
+.flashcard:focus-visible { outline: 3px solid rgba(239,93,168,.35); outline-offset: 3px; }
+.face { max-width: 680px; }
+.face-label { color: var(--muted); font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+.term { margin-top: 18px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(42px,7vw,76px); line-height: 1; letter-spacing: -.04em; overflow-wrap: anywhere; }
+.definition { margin-top: 16px; font-size: clamp(20px,3vw,30px); line-height: 1.45; }
+.definition-en { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); color: var(--muted); font-size: clamp(14px,1.8vw,18px); line-height: 1.5; }
+.flip-hint { position: absolute; bottom: 18px; color: var(--muted); font-size: 12px; }
+.controls { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; margin-top: 14px; }
+.button { border: 1px solid var(--line); background: #fff; border-radius: 12px; padding: 12px 16px; cursor: pointer; font-weight: 750; transition: .16s ease; }
+.button:hover { transform: translateY(-1px); border-color: var(--forest); }
+.button.primary { background: var(--forest); color: #fff; border-color: var(--forest); }
+.button.known { background: var(--lime); border-color: #f3bd3f; }
+.utility { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; }
+.utility .button { padding: 9px 12px; color: var(--muted); font-size: 12px; }
+.list-tools { display: flex; gap: 10px; margin: 24px 0 14px; }
+.list-sort { width: 190px; flex: 0 0 auto; }
+.rows { display: grid; gap: 8px; }
+.word-row { display: grid; grid-template-columns: minmax(130px,.7fr) 1.8fr auto; gap: 18px; align-items: start; padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.word { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 20px; overflow-wrap: anywhere; }
+.word-wrong { display: inline-block; margin-top: 7px; padding: 4px 7px; border-radius: 999px; background: #fdeef2; color: #c23b5e; font-family: Inter, Pretendard, system-ui, sans-serif; font-size: 10px; font-weight: 850; }
+.meaning { color: #372f52; line-height: 1.55; }
+.meaning-en { margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.speak { border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 2px 5px; }
+.empty { padding: 50px 10px; text-align: center; color: var(--muted); }
+.set-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+.footer-note { text-align: center; margin-top: 22px; color: var(--muted); font-size: 12px; }
+.learn-mode-switch { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin-top: 24px; padding: 6px; border-radius: 15px; background: #ebe6f7; }
+.learn-mode { border: 0; border-radius: 11px; padding: 12px 10px; background: transparent; color: var(--muted); cursor: pointer; font-weight: 800; line-height: 1.35; }
+.learn-mode.active { background: #fff; color: var(--forest); box-shadow: 0 5px 18px rgba(31,24,48,.09); }
+.type-switch { display: flex; gap: 6px; margin-top: 8px; }
+.type-switch button { flex: 1; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 6px; font-size: 12px; font-weight: 750; color: var(--muted); cursor: pointer; }
+.type-switch button.active { background: var(--forest); color: #fff; border-color: var(--forest); }
+.type-switch button:disabled { opacity: .4; cursor: not-allowed; }
+.learn-status { display: grid; grid-template-columns: 1fr repeat(3,auto); gap: 10px; align-items: center; margin: 14px 0; }
+.mastery { height: 10px; overflow: hidden; border-radius: 999px; background: #e3ddf4; }
+.mastery > span { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg,var(--orange),var(--lime)); transition: width .3s ease; }
+.mastery-chip { min-width: 78px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 11px; background: #fff; text-align: center; color: var(--muted); font-size: 11px; }
+.mastery-chip strong { display: block; margin-bottom: 2px; color: var(--ink); font-size: 17px; }
+.learn-card { min-height: 380px; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 12px 36px rgba(31,24,48,.08); }
+.question-kicker { color: var(--orange); font-size: 11px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.question-prompt { max-width: 720px; margin: 20px auto 28px; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px,4vw,38px); line-height: 1.35; letter-spacing: -.025em; }
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice { min-height: 58px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 13px; background: #fff; text-align: left; cursor: pointer; font-weight: 750; transition: .16s ease; }
+.choice-number { display: inline-grid; width: 26px; height: 26px; margin-right: 10px; place-items: center; border-radius: 8px; background: #ebe6f7; color: var(--muted); font-size: 12px; }
+.choice:hover:not(:disabled) { transform: translateY(-1px); border-color: var(--forest); background: #f4f1fc; }
+.choice.correct { border-color: #2f9e6e; background: #e3f7ec; }
+.choice.wrong { border-color: #d43f65; background: #fdeef2; }
+.answer-form { display: flex; gap: 9px; max-width: 660px; margin: 0 auto; }
+.answer-input { flex: 1; min-width: 0; padding: 15px 16px; border: 1px solid var(--line); border-radius: 13px; outline: none; font-size: 18px; }
+.answer-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(60,45,128,.12); }
+.learn-feedback { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; padding: 15px 17px; border-radius: 13px; line-height: 1.45; }
+.learn-feedback.good { background: #e3f7ec; }
+.learn-feedback.bad { background: #fdeef2; }
+.learn-feedback strong { display: block; }
+.feedback-extra { display: block; margin-top: 5px; color: rgba(31,24,48,.6); font-size: 13px; line-height: 1.5; }
+.learn-utility { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 12px; }
+.learn-utility .button { color: var(--muted); font-size: 12px; }
+.complete { min-height: 380px; display: grid; place-items: center; padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(145deg,#3c2d80,#55409e); color: #fff; text-align: center; box-shadow: var(--shadow); }
+.complete h3 { margin: 10px 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px,6vw,58px); letter-spacing: -.04em; }
+.complete p { margin: 0 0 22px; color: rgba(255,255,255,.72); }
+.complete .button { border-color: var(--lime); background: var(--lime); color: var(--ink); }
+.course-ladder { display: grid; gap: 8px; margin: 18px 0; }
+.ladder-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 13px; background: #f6f2fc; }
+.ladder-badge { display: grid; flex: 0 0 auto; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: var(--forest); color: #fff; font-size: 14px; font-weight: 800; }
+.ladder-row strong { display: block; font-size: 14px; }
+.ladder-row small { color: var(--muted); font-size: 12px; }
+.course-steps { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.course-step { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font-size: 11px; font-weight: 800; }
+.course-step.done { border-color: #f3bd3f; background: var(--lime); color: var(--ink); }
+.course-step.current { border-color: var(--forest); background: var(--forest); color: #fff; }
+.course-term { margin: 20px 0 14px; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px,6vw,64px); line-height: 1; letter-spacing: -.04em; overflow-wrap: anywhere; }
+.course-ko { text-align: center; font-size: clamp(18px,2.6vw,25px); line-height: 1.45; }
+.course-en { max-width: 620px; margin: 16px auto 0; padding-top: 15px; border-top: 1px dashed var(--line); text-align: center; color: var(--muted); font-size: clamp(13px,1.7vw,16px); line-height: 1.55; }
+.course-card-actions { display: flex; justify-content: center; gap: 9px; }
+.hint-text { margin: 0 0 14px; text-align: center; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 20px; letter-spacing: .2em; }
+.course-restart { width: 100%; margin-top: 8px; padding: 13px; }
+.test-config { margin-top: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 12px 36px rgba(31,24,48,.08); }
+.test-config h3 { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: 30px; letter-spacing: -.03em; }
+.test-config > p { margin: 0 0 24px; color: var(--muted); line-height: 1.55; }
+.test-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.test-field { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #f6f2fc; }
+.test-field .label { margin-bottom: 7px; }
+.test-direction { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 12px 0 22px; }
+.direction-option { position: relative; }
+.direction-option input { position: absolute; opacity: 0; pointer-events: none; }
+.direction-option span { display: block; min-height: 92px; padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #fff; cursor: pointer; }
+.direction-option strong { display: block; margin-bottom: 5px; }
+.direction-option small { color: var(--muted); line-height: 1.4; }
+.direction-option input:checked + span { border-color: var(--forest); background: #eef0fd; box-shadow: 0 0 0 2px rgba(60,45,128,.12); }
+.test-start { width: 100%; padding: 15px; }
+.review-preview { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 14px 0; padding: 14px 16px; border-radius: 13px; background: #fdeef2; color: var(--muted); font-size: 13px; }
+.review-preview strong { color: #c23b5e; font-size: 22px; }
+.test-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0 12px; }
+.test-progress { flex: 1; height: 9px; overflow: hidden; border-radius: 999px; background: #e3ddf4; }
+.test-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--forest); transition: width .25s ease; }
+.test-choice.selected { border-color: var(--forest); background: #eef0fd; box-shadow: inset 0 0 0 1px var(--forest); }
+.test-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; }
+.test-actions span { color: var(--muted); font-size: 12px; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 8px 0; }
+.match-row { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px dashed var(--line); }
+.match-num { min-width: 20px; color: var(--muted); font-weight: 800; }
+.match-term { flex: 1; font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 17px; overflow-wrap: anywhere; }
+.match-input { width: 56px; flex: 0 0 auto; padding: 8px; text-align: center; text-transform: lowercase; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); outline: none; }
+.match-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(60,45,128,.12); }
+.match-row.done .match-term { color: var(--muted); text-decoration: line-through; }
+.match-def { padding: 9px 0; border-bottom: 1px dashed var(--line); color: #372f52; line-height: 1.5; font-size: 14px; }
+.match-def b { color: var(--forest); }
+.match-def.done { color: var(--muted); text-decoration: line-through; }
+.match-def.done b { color: var(--muted); }
+.results-card { margin-top: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 12px 36px rgba(31,24,48,.08); }
+.score-ring { width: 150px; height: 150px; display: grid; place-items: center; margin: 0 auto 18px; border-radius: 50%; background: conic-gradient(var(--lime) var(--score),#e6e0f5 0); position: relative; }
+.score-ring::after { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #fff; }
+.score-ring strong { position: relative; z-index: 1; font-family: Georgia, "Times New Roman", serif; font-size: 38px; }
+.results-title { text-align: center; }
+.results-title h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 34px; }
+.results-title p { color: var(--muted); }
+.result-actions { display: flex; justify-content: center; gap: 9px; margin: 20px 0; }
+.wrong-list { display: grid; gap: 8px; margin-top: 20px; }
+.wrong-row { padding: 15px 16px; border: 1px solid var(--line); border-radius: 13px; background: #fdf1f5; }
+.wrong-row .prompt { margin-bottom: 7px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.wrong-row .answer { line-height: 1.5; }
+.wrong-row .answer del { color: #c23b5e; }
+.wrong-row .answer strong { color: var(--forest); }
+@media (max-width: 820px) {
+  .shell { width: min(100% - 20px, 700px); padding-top: 12px; }
+  .topbar { padding: 0 4px; }
+  .source { display: none; }
+  .hero { padding: 26px 22px; border-radius: 22px; }
+  .workspace { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .set-grid, .shortcuts { display: none; }
+  .content { padding: 18px; }
+  .content-head { align-items: stretch; flex-direction: column; }
+  .content-head > div:first-child { flex: 0 0 auto; }
+  .tabs { width: 100%; flex-wrap: wrap; justify-content: center; gap: 4px; }
+  .tab { flex: 1 1 auto; max-width: 34%; padding: 9px 5px; font-size: 12px; }
+  .flashcard { min-height: 320px; padding: 24px 18px; }
+  .controls { grid-template-columns: 1fr 1fr; }
+  .controls .known { grid-column: 1 / -1; grid-row: 1; }
+  .learn-status { grid-template-columns: 1fr 1fr 1fr; }
+  .mastery { grid-column: 1 / -1; }
+  .learn-mode-switch { grid-template-columns: repeat(2,1fr); }
+  .learn-mode { padding: 10px 4px; font-size: 12px; }
+  .learn-card { min-height: 390px; padding: 22px 16px; }
+  .choices { grid-template-columns: 1fr; }
+  .answer-form { flex-direction: column; width: 100%; }
+  .learn-feedback { align-items: stretch; flex-direction: column; }
+  .learn-utility { align-items: stretch; }
+  .test-config { padding: 22px 16px; }
+  .test-grid, .test-direction { grid-template-columns: 1fr; }
+  .match-grid { grid-template-columns: 1fr; gap: 4px 0; }
+  .match-defs { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .test-head { align-items: stretch; flex-direction: column; }
+  .test-actions { align-items: stretch; flex-direction: column; }
+  .test-actions .button { width: 100%; }
+  .result-actions { flex-direction: column; }
+  .list-tools { flex-wrap: wrap; }
+  .list-sort { width: 100%; }
+  .word-row { grid-template-columns: 1fr auto; gap: 7px 10px; }
+  .meaning { grid-column: 1 / -1; }
+}
+@media (max-width: 359px) {
+  .tabs { gap: 3px; }
+  .tab { max-width: 40%; padding: 8px 4px; font-size: 11px; }
+  .learn-mode-switch { gap: 5px; }
+  .learn-mode { padding: 10px 2px; font-size: 11px; }
+}
+@media print {
+  body { background: #fff; }
+  .topbar, .hero, .sidebar, .tabs, #learn-panel, #wrong-review-panel, #test-panel, .progress-wrap, .flashcard, .controls, .utility, .list-tools, .set-footer, .footer-note { display: none !important; }
+  .shell { width: 100%; padding: 0; }
+  .workspace { display: block; margin: 0; }
+  .content { border: 0; box-shadow: none; padding: 0; }
+  #list-panel { display: block !important; }
+  .rows { grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .word-row { break-inside: avoid; padding: 8px 0; border: 0; border-bottom: 1px solid #ddd; border-radius: 0; grid-template-columns: 35% 65%; }
+  .speak { display: none; }
+}
+</style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="mark">B</span><span>Set B Vocabulary</span></div>
+      <div class="source">Source: Set B vocabulary list</div>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">24 curated study sets</div>
+      <h1>Build a sharper vocabulary.</h1>
+      <p>단어를 하나도 몰라도 <b>코스</b>를 따라가면 됩니다. 먼저 보여주고 그 다음에 한글 뜻·영어 뜻 양방향으로 물어보는 6단계를 5개씩 반복합니다. 코스를 마치면 학습하기·테스트로 이어집니다.</p>
+      <div class="stat-row"><span class="stat">24 sets</span><span class="stat">600 words</span><span class="stat">세트당 25개</span><span class="stat">한글 뜻 학습</span><span class="stat">offline ready</span></div>
+    </section>
+    <section class="workspace">
+      <aside class="sidebar">
+        <label class="label" for="set-select">학습 세트</label>
+        <select class="select" id="set-select" aria-label="학습 세트 선택"></select>
+        <div class="wrong-summary"><div><span id="wrong-set-label">누적 오답</span><strong id="wrong-total">0회</strong></div><button class="wrong-reset" id="reset-wrong">초기화</button></div>
+        <div class="data-transfer"><div class="data-transfer-title">학습 데이터 이동</div><div class="data-transfer-buttons"><button class="button" id="export-data">내보내기</button><button class="button" id="import-data">가져오기</button></div><input id="import-data-file" type="file" accept="application/json,.json" hidden></div>
+        <div class="set-grid" id="set-grid" aria-label="세트 바로가기"></div>
+        <div class="shortcuts"><strong>코스</strong><br><kbd>1</kbd>–<kbd>4</kbd> 답 선택<br><kbd>Space</kbd> / <kbd>Enter</kbd> 다음<br><br><strong>학습·오답학습</strong><br><kbd>1</kbd>–<kbd>4</kbd> 답 선택<br><kbd>Space</kbd> / <kbd>Enter</kbd> 다음 문제<br><br><strong>테스트</strong><br><kbd>1</kbd>–<kbd>4</kbd> 답 선택<br><kbd>Space</kbd> 다음 문제<br><br><strong>카드</strong><br><kbd>Space</kbd> 카드 뒤집기<br><kbd>←</kbd> <kbd>→</kbd> 이전·다음 단어</div>
+      </aside>
+      <div class="content">
+        <div class="content-head">
+          <div><h2 class="set-title" id="set-title"></h2><div class="set-note" id="set-note"></div></div>
+          <div class="tabs" role="tablist"><button class="tab" data-tab="course">코스</button><button class="tab active" data-tab="learn">학습하기</button><button class="tab" data-tab="wrong-review">오답학습</button><button class="tab" data-tab="test">테스트</button><button class="tab" data-tab="cards">카드</button><button class="tab" data-tab="list">목록</button></div>
+        </div>
+        <section class="panel" id="course-panel">
+          <div id="course-stage"></div>
+        </section>
+        <section class="panel active" id="learn-panel">
+          <div class="learn-mode-switch" aria-label="학습 방향 선택">
+            <button class="learn-mode active" data-direction="definition-to-word">한글 뜻 → 단어</button>
+            <button class="learn-mode" data-direction="word-to-definition">단어 → 한글 뜻</button>
+            <button class="learn-mode" data-direction="en-to-word">영영 → 단어</button>
+            <button class="learn-mode" data-direction="word-to-en">단어 → 영영</button>
+          </div>
+          <div class="type-switch" id="learn-type-switch" aria-label="출제 방식 선택">
+            <button data-type="auto" class="active">자동</button>
+            <button data-type="choice">객관식</button>
+            <button data-type="write">주관식</button>
+          </div>
+          <div class="learn-status">
+            <div class="mastery" aria-label="학습 숙련도"><span id="mastery-bar"></span></div>
+            <div class="mastery-chip"><strong id="fresh-count">0</strong>모르는 단어</div>
+            <div class="mastery-chip"><strong id="learning-count">0</strong>학습 중</div>
+            <div class="mastery-chip"><strong id="mastered-count">0</strong>숙달</div>
+          </div>
+          <div id="learn-stage"></div>
+        </section>
+        <section class="panel" id="wrong-review-panel">
+          <div id="wrong-review-stage"></div>
+        </section>
+        <section class="panel" id="test-panel">
+          <div id="test-stage"></div>
+        </section>
+        <section class="panel" id="cards-panel">
+          <div class="progress-wrap"><div class="progress"><span id="progress-bar"></span></div><div class="counter" id="counter"></div></div>
+          <button class="flashcard" id="flashcard" aria-label="카드 뒤집기"><div class="face" id="card-face"></div><div class="flip-hint">눌러서 카드 뒤집기</div></button>
+          <div class="controls"><button class="button" id="prev">← 이전</button><button class="button known" id="known-button" aria-pressed="false">외웠어요</button><button class="button primary" id="next">다음 →</button></div>
+          <div class="utility"><button class="button" id="pronounce">◖) 발음 듣기</button><button class="button" id="shuffle">순서 섞기</button><button class="button" id="reset">외운 표시 초기화</button></div>
+        </section>
+        <section class="panel" id="list-panel">
+          <div class="list-tools"><input class="search" id="search" type="search" placeholder="단어 · 뜻 검색" aria-label="단어, 뜻 검색"><select class="select list-sort" id="list-sort" aria-label="목록 정렬"><option value="source">원래 순서</option><option value="wrong">오답 많은 순</option><option value="alpha">알파벳순</option></select><button class="button" id="print">인쇄</button></div>
+          <div class="rows" id="rows"></div>
+        </section>
+        <div class="set-footer"><button class="button" id="prev-set">← 이전 세트</button><button class="button" id="next-set">다음 세트 →</button></div>
+      </div>
+    </section>
+    <div class="footer-note">Set B vocabulary study file · Progress is saved only in this browser.</div>
+  </main>
+  <script>const DATA = {"1": [{"term": "affinity", "definition": "(명) 자연스러운 끌림, 선호 또는 친밀감", "en": "(n.) a natural attraction, preference, or feeling of kinship"}, {"term": "berate", "definition": "(동) 심하게 꾸짖다", "en": "(v.) to scold vehemently"}, {"term": "capitalism", "definition": "(명) 재산과 사업이 주로 사적 소유자에 의해 이윤을 위해 통제되는 경제/정치 체제", "en": "(n.) economic/political system in which property and business is mainly controlled by private owners for profit"}, {"term": "concoct", "definition": "(동) 지어내다, 준비하다 또는 고안하다", "en": "(v.) to make up, prepare, or invent"}, {"term": "conundrum", "definition": "(명) 어려운 질문, 문제 또는 수수께끼", "en": "(n.) a difficult question, problem, or puzzle"}, {"term": "convey", "definition": "(동) 메시지를 전달하거나 무언가를 배달하다", "en": "(v.) to communicate a message or deliver something"}, {"term": "deter", "definition": "(동) 낙담시키다, 하지 못하게 하다", "en": "(v.) to discourage, prevent from doing"}, {"term": "fare", "definition": "1. (명) 교통비; 2. (명) 음식; 3. (동) 대처하거나 잘 지내다", "en": "1. (n.) a transportation fee; 2. (n.) food; 3. (v.) to cope or get along"}, {"term": "fastidious", "definition": "(형) 꼼꼼하고 까다로우며, 높고 흔히 달성하기 어려운 기준을 지닌", "en": "(adj.) meticulous, demanding, having high and often unattainable standards"}, {"term": "formality", "definition": "(명) 절차나 전통에 따라 행하는 일", "en": "(n.) something done as a matter of procedure or tradition"}, {"term": "idolize", "definition": "(동) 우상으로 숭배하다, 우상을 만들다; 아주 많이 사랑하다", "en": "(v.) to worship as an idol, make an idol of; to love very much"}, {"term": "inept", "definition": "(형) 미숙한, 서투른, 일을 잘하지 못하는 (-)", "en": "(adj.) unskilled, clumsy, unable to do things well (-)"}, {"term": "insolent", "definition": "(형) 무례한, 거만한, 위압적인", "en": "(adj.) rude, arrogant, overbearing"}, {"term": "luminous", "definition": "(형) 밝게 빛나는", "en": "(adj.) brightly shining"}, {"term": "lush", "definition": "(형) 특히 식물이 풍성하게 자라는", "en": "(adj.) marked by richness of growth, especially of vegetation"}, {"term": "malleable", "definition": "(형) 모양을 만들거나 변형할 수 있는", "en": "(adj.) capable of being shaped or transformed"}, {"term": "obeisance", "definition": "(명) 절이나 무릎 인사; 깊은 존경", "en": "(n.) a bow or curtsy; deep reverence"}, {"term": "patent", "definition": "(형) 쉽게 보거나 이해할 수 있는, 명확한", "en": "(adj.) readily seen or understood, clear"}, {"term": "proxy", "definition": "(명) 대리인, 다른 사람을 대신해 행동하는 사람", "en": "(n.) a substitute agent, one acting on behalf of another"}, {"term": "quip", "definition": "(명) 짧고 재치 있는 말", "en": "(n.) a short, witty comment"}, {"term": "rudimentary", "definition": "(형) 아직 완전히 발달하지 않은; 초보적이거나 기본적인", "en": "(adj.) not yet fully developed; elementary or fundamental"}, {"term": "sensuous", "definition": "(형) 감각적 만족을 수반하는", "en": "(adj.) involving sensory gratification"}, {"term": "tribulation", "definition": "(명) 큰 어려움이나 고통", "en": "(n.) great trouble or suffering"}, {"term": "uniform", "definition": "(형) 동일함을 특징으로 하는", "en": "(adj.) characterized by sameness"}, {"term": "vernacular", "definition": "(명) 일상적으로 쓰이는 구어", "en": "(n) common spoken language"}], "2": [{"term": "ascertain", "definition": "(동) 대개 조사나 그와 비슷한 노력을 거쳐 확실히 알아내다", "en": "(v.) to find out with certainty, usually after an investigation or similar effort"}, {"term": "avenge", "definition": "(동) 복수하다", "en": "(v.) to seek revenge"}, {"term": "bard", "definition": "(명) 시인, 흔히 노래도 하는 시인", "en": "(n.) a poet, often a singer as well"}, {"term": "barren", "definition": "(형) (땅이) 비어 있고 식물이 자라지 않는; 불모의", "en": "(adj.) (of land) empty and lacking plants; infertile"}, {"term": "chronological", "definition": "(형) 시간순으로 배열된", "en": "(adj.) arranged in order of time"}, {"term": "coup", "definition": "1. (명) 훌륭하고 예상 밖이며 성공적인 행동; 2. (명) 정부를 전복하고 권력을 장악하는 일", "en": "1. (n.) a brilliant, unexpected, and successful act, 2. (n.) the overthrow of a government and assumption of authority"}, {"term": "cryptic", "definition": "(형) 수수께끼 같은; 숨겨진; 비밀스러운", "en": "(adj.) mysterious; hidden; secret"}, {"term": "deride", "definition": "(동) 조롱하며 비웃다, 경멸하다", "en": "(v.) to laugh at mockingly, scorn"}, {"term": "enigma", "definition": "(명) 수수께끼 또는 불가사의", "en": "(n.) a mystery or puzzle"}, {"term": "enlightened", "definition": "(형) 무지와 그릇된 생각에서 벗어난; 올바른 이해력을 지닌", "en": "(adj.) free from ignorance and false ideas; processing sound understanding"}, {"term": "esoteric", "definition": "(형) 소수의 사람만 이해하는", "en": "(adj.) understood by only a select few"}, {"term": "ethics", "definition": "(명) 행동을 규율하는 도덕적 기준", "en": "(n.) moral standards governing behavior"}, {"term": "infusion", "definition": "(명) 한 물질을 다른 물질에 주입하는 것; 한 물질이 다른 물질에 스며드는 것", "en": "(n.) an injection of one substance into another; the permeation of one substance by another"}, {"term": "judicious", "definition": "(형) 좋은 판단력을 보임 (+)", "en": "(adj.) showing good judgment (+)"}, {"term": "notion", "definition": "(명) 무언가에 대한 생각 또는 무언가를 하고 싶은 욕구", "en": "(n.) an idea about something or a desire to do something"}, {"term": "novel", "definition": "(형) 눈에 띄게 새롭거나 특이한 (+)", "en": "(adj.) strikingly new or unusual (+)"}, {"term": "orthodox", "definition": "(형) 전통적인, 확립된 규범을 따르는", "en": "(adj.) conventional, conforming to established protocol"}, {"term": "paradigm", "definition": "(명) 완벽한 전형이나 모범이 되는 예", "en": "(n.) an example that is a perfect pattern or model"}, {"term": "prestige", "definition": "(명) 높은 지위; 성취로 얻은 존경", "en": "(n.) high standing; respect earned by accomplishments"}, {"term": "reign", "definition": "(명) 개인이나 정부가 권력을 잡고 있는 기간", "en": "(n.) the timespan when an individual or government is in power"}, {"term": "relish", "definition": "(동) 즐기다", "en": "(v.) to enjoy"}, {"term": "rend", "definition": "(동) 거칠게 찢다", "en": "(v.) to tear violently"}, {"term": "replica", "definition": "(명) 복사본 또는 복제품, 특히 원본보다 작은 크기로 만든 것", "en": "(n.) a copy or reproduction, especially one on a smaller scale than the original"}, {"term": "unbridled", "definition": "(형) 억제되거나 통제되지 않은", "en": "(adj.) not restrained or controlled"}, {"term": "wrath", "definition": "(명) 복수심에 찬 분노; 처벌", "en": "(n.) vengeful anger, punishment"}], "3": [{"term": "abyss", "definition": "(명) 깊은 공허 또는 바닥없는 구덩이", "en": "(n.) a deep emptiness or bottomless pit"}, {"term": "address", "definition": "(동) ~에게 말하다; ~에 주의를 돌리다", "en": "(v.) to speak to; to direct one's attention to"}, {"term": "ape", "definition": "(동) 무비판적으로 모든 면을 모방하다 (+)", "en": "(v.) imitate uncritically and in every aspect (+)"}, {"term": "appreciate", "definition": "(동) 가치가 오르다", "en": "(v.) to increase in value"}, {"term": "appropriate", "definition": "(동) 허락 없이 가져가다; 특정 용도로 따로 배정하다(끝을 \"ate\"로 발음); (형) 적절한, 알맞은(끝을 \"it\"으로 발음)", "en": "(v.) to take without permission, to set aside for a particular use (say \"ate\" at the end); (adj.) suitable, fitting (say \"it\")"}, {"term": "banter", "definition": "(명) 유쾌하고 장난스러운 대화", "en": "(n.) good-humored, playful conversation"}, {"term": "benefactor", "definition": "(명) 다른 사람에게 선행을 베푸는 사람", "en": "(n.) one who does good to others"}, {"term": "coerce", "definition": "(동) 누군가에게 어떤 일을 하도록 하거나 하지 말라고 강요하다", "en": "(v.) to force someone to do or not do something"}, {"term": "conceive", "definition": "(동) 계획이나 아이디어를 생각해 내다; 임신하다", "en": "(v.) to come up with a plan or idea; to become pregnant"}, {"term": "contemporary", "definition": "(명) 다른 사람과 같은 시대에 사는 사람", "en": "(n.) a person living during the same period as another"}, {"term": "decadent", "definition": "(형) 방종한, 부패한 (-)", "en": "(adj.) self-indulgent, corrupt (-)"}, {"term": "defiant", "definition": "(형) 규칙이나 권위자에게 불복종하는", "en": "(adj.) choosing to disobey rules or a person of authority"}, {"term": "disdain", "definition": "1. (동) 경멸하다, 업신여기다; 2. (명) 경멸, 멸시", "en": "1. (v.) to scorn, disrespect, 2. (n.) scorn, contempt"}, {"term": "ephemeral", "definition": "(형) 단명한, 일시적인", "en": "(adj.) short-lived, fleeting"}, {"term": "forestall", "definition": "(동) 방지하다, 방해하다, 지연시키다", "en": "(v.) to prevent, thwart, delay"}, {"term": "inkling", "definition": "(명) 약간의 의심; 막연한 생각", "en": "(n.) a slight suspicion; a vague idea"}, {"term": "morbid", "definition": "(형) 1. 우울하거나 불건전한 생각에 사로잡힌; 2. 질병의 영향을 받거나 질병으로 생긴", "en": "(adj.) 1. marked by gloomy or unwholesome thoughts. 2. affected by or caused by disease"}, {"term": "parry", "definition": "(명) 공격을 막아 내는 방어 동작(특히 검술에서); (동) 그러한 방어 동작을 하다", "en": "(n.) a defensive move to fend off an attack (esp with a sword); (v.) to make such a defensive move"}, {"term": "residue", "definition": "(명) 일부를 사용하거나 제거한 뒤 남는 것, 잔여물", "en": "(n.) a remainder, that which remains when a part has been used up or removed"}, {"term": "sanctuary", "definition": "(명) 신성하거나 거룩한 장소; 체포나 처벌을 피하는 피난처 또는 보호; 피난처", "en": "(n.) a sacred or holy place; refuge or protection from capture or punishment; a place of refuge or protection"}, {"term": "scorn", "definition": "(동) 어떤 것이나 사람을 경멸하다; (명) 경멸, 멸시", "en": "(v.) to show contempt for something or someone; (n.) disdain, contempt"}, {"term": "scrutinize", "definition": "(동) 주의 깊게 조사하다", "en": "(v.) to examine with great care"}, {"term": "stringent", "definition": "(형) 가혹한; 엄격한", "en": "(adj.) harsh; strict"}, {"term": "subjugate", "definition": "(동) 통제하다, 제압하다", "en": "(v.) to bring under control, subdue"}, {"term": "veneer", "definition": "(명) 본질을 가리는 겉모습", "en": "(n.) surface appearance covering the true nature"}], "4": [{"term": "aftermath", "definition": "(명) 결과; 어떤 사건이나 재난 뒤에 이어지는 일들", "en": "(n.) consequence; events following some occurrence or calamity"}, {"term": "anecdote", "definition": "(명) 어떤 사건에 관한 짧은 이야기", "en": "(n.) a short account of an event"}, {"term": "anterior", "definition": "(형) 앞에 위치한; 앞쪽을 향한", "en": "(adj.) situated in front; toward the front"}, {"term": "cleave", "definition": "(동) 쪼개거나 절단하다; 충실히 따르다; 달라붙다", "en": "(v.) split or sever; remain faithful to; cling to"}, {"term": "combustible", "definition": "(형) 불이 붙거나 탈 수 있음", "en": "(adj.) capable of catching fire or burning"}, {"term": "complacent", "definition": "(형) 자기만족에 빠진; 잘난 체하는 (-)", "en": "(adj.) self-satisfied; smug (-)"}, {"term": "condescending", "definition": "(형) 거만하게 남을 깔보는", "en": "(adj.) arrogant, in a way that looks down on others"}, {"term": "contempt", "definition": "(명) 사람이나 사물에 대한 노골적인 경멸", "en": "(n.) open disrespect for a person or thing"}, {"term": "conventional", "definition": "(형) 통용되는 생각이나 기준에 맞는", "en": "(adj.) in line with accepted ideas or standards"}, {"term": "disillusioned", "definition": "(형) 기대가 충족되지 않아 환멸을 느끼는", "en": "(adj.) disappointed because expectations were not met"}, {"term": "equitable", "definition": "(형) 공정한, 정의로운, 올바른, 합리적인, 공평한 (+)", "en": "(adj.) fair, just, right, reasonable, even-handed (+)"}, {"term": "furtive", "definition": "(형) 남몰래 하는, 교활한", "en": "(adj.) secretive, sly"}, {"term": "pact", "definition": "(명) 계약, 조약", "en": "(n.) an agreement, treaty"}, {"term": "palatable", "definition": "(형) 입맛이나 생각에 받아들일 만한", "en": "(adj.) acceptable to the taste or mind"}, {"term": "paltry", "definition": "(형) 양이 매우 적음; 빈약한 (-)", "en": "(adj.) very small in amount; meager (-)"}, {"term": "proprietary", "definition": "(형) 재산 소유자의 특성을 지닌; 소유 재산을 이루는", "en": "(adj.) characteristic of an owner of property; constituting property"}, {"term": "prose", "definition": "(명) 시가 아닌 일반적인 문장으로 된 글", "en": "(n.) written language other than poetry"}, {"term": "resignation", "definition": "(명) 참을성 있게 순응함; 운명을 받아들임", "en": "(n.) patient submissiveness; acceptance of fate"}, {"term": "scrutiny", "definition": "(명) 사물이나 사람을 주의 깊게 살펴봄", "en": "(n.) careful examination of something or someone"}, {"term": "serene", "definition": "(형) 평온한, 근심 없는", "en": "(adj.) calm, untroubled"}, {"term": "smug", "definition": "(형) 자만하는; 거만한 (-)", "en": "(adj.) self-confident; arrogant (-)"}, {"term": "trifling", "definition": "(형) 사소한; 중요하지 않은", "en": "(adj.) trivial; unimportant"}, {"term": "tumult", "definition": "(명) 소동, 소음, 혼란이 뒤섞인 상태", "en": "(n.) a state of commotion, noise, and confusion"}, {"term": "virtue", "definition": "(명) 도덕적이고 칭찬할 만한 덕목", "en": "(n.) a moral and praiseworthy trait"}, {"term": "zeal", "definition": "(명) 대의명분이나 목표를 향한 큰 에너지 또는 열정", "en": "(n.) great energy or enthusiasm toward a cause or goal"}], "5": [{"term": "abject", "definition": "(형) 비참한, 불쌍한", "en": "(adj.) wretched, pitiful"}, {"term": "attain", "definition": "(동) 달성하다, 도달하다", "en": "(v.) to achieve, arrive at"}, {"term": "civil", "definition": "1. (형) 예의 바른; 문명화된; 정중한; 2. (형) 시민과 관련된", "en": "1. (adj.) polite; civilized; courteous; 2. (adj.) related to citizens"}, {"term": "denounce", "definition": "(동) 공개적으로 비판하다", "en": "(v.) to criticize publicly"}, {"term": "despondent", "definition": "(형) 우울하고 낙담하며 절망적인", "en": "(adj.) feeling depressed, discouraged, hopeless"}, {"term": "emit", "definition": "(동) 방출하다, 내뿜다 또는 내보내다", "en": "(v.) to give off, send forth, or discharge"}, {"term": "envision", "definition": "(동) 상상하다; 예견하다", "en": "(v.) to imagine; to foresee"}, {"term": "evince", "definition": "(동) 보여주다, 드러내다", "en": "(v.) to show, reveal"}, {"term": "facade", "definition": "(명) 건물의 정면; 건물의 가짜 정면; 어떤 것의 거짓되거나 오해를 부르는 겉모습", "en": "(n.) the front of a building; the false front of a building; the false front or misleading appearance of anything"}, {"term": "fend", "definition": "(동) 막아 내다, 저항하다; 그럭저럭 살아가다, 꾸려 나가다", "en": "(v.) to ward off, resist; to get along, manage"}, {"term": "fervor", "definition": "(명) 강렬하고 열정적인 감정", "en": "(n.) intense and passionate feeling"}, {"term": "flora", "definition": "(명) 특정 지역이나 시대의 식물을 하나의 집단으로 본 것", "en": "(n.) plants considered as a group in a particular area or era"}, {"term": "hardy", "definition": "(형) 강인한, 불리한 환경에서도 살아남을 수 있는", "en": "(adj.) robust, capable of surviving through adverse conditions"}, {"term": "lobby", "definition": "(동) 입법 조치를 촉구하다; 영향력을 행사하다", "en": "(v.) to urge legislative action; to exert influence"}, {"term": "ludicrous", "definition": "(형) 말도 안 되는; 바보 같은; 터무니없는", "en": "(adj.) ridiculous; silly; absurd"}, {"term": "malicious", "definition": "(형) 고의로 해를 끼치는", "en": "(adj.) intentionally harmful"}, {"term": "partisan", "definition": "(명) 추종자, 지지자; (형) 한 편이나 정당에 강하게 치우친", "en": "(n.) a follower, adherent; (adj.) strongly biased to one side or political party"}, {"term": "pedestrian", "definition": "(형) 평범한, 진부한, 두드러지지 않는 (-); (명) 보행자", "en": "(adj.) commonplace, trite, unremarkable (-); (n.) one who walks"}, {"term": "probe", "definition": "(동) 철저히 조사하다; (명) 조사; 탐색이나 검사에 쓰는 장치", "en": "(v.) to examine, investigate thoroughly; (n.) an investigation; a device used to explore or examine"}, {"term": "profound", "definition": "(형) 지적인 통찰이나 감정의 깊이가 있는 (+)", "en": "(adj.) showing intellectual penetration or emotional depth (+)"}, {"term": "sentiment", "definition": "(명) 생각, 느낌, 의견", "en": "(n.) a thought, feeling, or opinion"}, {"term": "sleek", "definition": "(형) 매끄럽고 윤기 나는", "en": "(adj.) smooth and glossy"}, {"term": "speculative", "definition": "(형) (1) 사실에 근거하지 않은; (2) (투자에서) 위험성이 높은", "en": "(adj.) (1) not based in fact; (2) high risk (if referring to an investment)"}, {"term": "staple", "definition": "(명) 기본적이고 필수적인 식품; (형) 가장 중요한, 주요한", "en": "(n.) a basic, essential food; (adj.) most important, principal"}, {"term": "steadfast", "definition": "(형) 단단히 고정된; 한결같고 변하지 않는", "en": "(adj.) firmly fixed; constant, not moving or changing"}], "6": [{"term": "cadence", "definition": "(명) 리듬, 소리의 진행", "en": "(n.) a rhythm, progression of sound"}, {"term": "contend", "definition": "1. (동) ~와 싸우다; 2. (동) 주장하거나 단언하다", "en": "(v.) to struggle with. 2. to maintain or assert"}, {"term": "crux", "definition": "(명) 쟁점의 가장 중요한 부분, 핵심", "en": "(n.) the most important point of an issue"}, {"term": "dilettante", "definition": "(명) 아마추어 또는 겉핥기식 애호가 (-)", "en": "(n.) an amateur or dabbler (-)"}, {"term": "elicit", "definition": "(동) 감정을 불러일으키다; 누군가에게서 반응이나 정보를 끌어내다", "en": "(v.) to call forth or evoke feelings; to draw out a response or info from someone"}, {"term": "fiscal", "definition": "(형) 돈이나 정부의 세수 지출과 관련된", "en": "(adj.) related to money or to how governments spend tax revenue"}, {"term": "gruesome", "definition": "(형) 충격이나 공포를 일으키는", "en": "(adj.) causing shock or horror"}, {"term": "harbinger", "definition": "(명) 앞으로 일어날 일을 알리는 것; 전조", "en": "(n.) something that indicates what is to come; a forerunner"}, {"term": "hoax", "definition": "(명) 속임수, 사람들이 거짓을 믿게 하려는 시도", "en": "(n.) a deception, an attempt to make people believe something false"}, {"term": "inherit", "definition": "(동) 앞선 소유자가 사망했을 때 상속인으로서 돈, 재산 또는 지위를 물려받다", "en": "(v.) to receive money, property, or a title as an heir at the death of the previous holder"}, {"term": "inordinate", "definition": "(형) 정상 한계를 넘어서는; 과도한", "en": "(adj.) beyond normal limits; excessive"}, {"term": "intrinsic", "definition": "(형) 본질적인; 고유한; 내재된", "en": "(adj.) essential; inherent; built-in"}, {"term": "minimize", "definition": "(동) 가능한 한 작게 하거나 대수롭지 않게 여기다; 이전보다 작게 만들다", "en": "(v.) to make as small as possible, make the least of; to make smaller than before"}, {"term": "morose", "definition": "(형) 우울하거나 음침한", "en": "(adj.) gloomy or sullen"}, {"term": "narrative", "definition": "(명) 이야기 또는 이야기의 줄거리 구조", "en": "(n.) a story or the plot structure of a story"}, {"term": "petty", "definition": "(형) 중요하지 않은, 사소한; 속이 좁은; 지위가 낮은, 하급의", "en": "(adj.) unimportant, trivial; narrow-minded; secondary in rank, minor"}, {"term": "pragmatic", "definition": "(형) 실용적인; 실제적인 문제에 관심을 두는", "en": "(adj.) practical; concerned with practical matters"}, {"term": "precocious", "definition": "(형) 나이에 비해 재능이 뛰어난", "en": "(adj.) talented beyond one's age"}, {"term": "presume", "definition": "(동) 당연하게 여기다, 가정하거나 추측하다; 감히 ~하다, 제멋대로 나서다", "en": "(v.) to take for granted, assume or suppose; to dare, take upon oneself, take liberties"}, {"term": "reparation", "definition": "(명) 갚음; 잘못에 대한 보상; 배상", "en": "(n.) paying back; making amends; compensation"}, {"term": "rhetoric", "definition": "(명) 1. 누군가의 말이나 의사소통 스타일; 2. 언어를 사용하는 기술(특히 설득력 있는 연설/글쓰기)", "en": "(n.) 1. someone's words or communication style; 2. the art of using language (especially for persuasive speech/writing)"}, {"term": "scant", "definition": "(형) 충분하지 않음; 빈약한 (-)", "en": "(adj.) not enough; meager (-)"}, {"term": "superficial", "definition": "(형) 실제 본질이 아니라 단지 겉모습에만 머무는", "en": "(adj.) merely on the level of appearance (rather than actual)"}, {"term": "surreptitious", "definition": "(형) 은밀한", "en": "(adj.) stealthy"}, {"term": "tentative", "definition": "(형) 확실하지 않은; 망설이는", "en": "(adj.) uncertain; hesitant"}], "7": [{"term": "abolish", "definition": "(동) (시스템이나 관행)을 끝내다", "en": "(v.) to put an end to (a system or practice)"}, {"term": "affliction", "definition": "(명) 고통, 괴로움, 또는 질병", "en": "(n.) pain, suffering, or a disease"}, {"term": "aromatic", "definition": "(형) 향기로운 (+)", "en": "(adj.) fragrant (+)"}, {"term": "autonomous", "definition": "(형) 독립적으로 행동하는", "en": "(adj.) acting independently"}, {"term": "basin", "definition": "(명) 세면대 또는 대야", "en": "(n.) a sink or tub"}, {"term": "breach", "definition": "(명) 구멍, 틈, 파열, 균열; 위반; (동) 구멍을 내다, 돌파하다", "en": "(n.) an opening, gap, rupture, rift; a violation or infraction; (v.) to create an opening, break through"}, {"term": "brooding", "definition": "(형) 깊은 생각에 잠겨 불행하거나 어둡고 진지해 보이는", "en": "(adj.) showing unhappiness or dark seriousness while deep in thought"}, {"term": "capricious", "definition": "(형) 충동적이고 예측할 수 없는 (-)", "en": "(adj.) impulsive and unpredictable (-)"}, {"term": "cede", "definition": "(동) 특히 조약이나 공식 합의에 따라 포기하거나 양도하다", "en": "(v.) to give up or transfer, especially by treaty or formal agreement"}, {"term": "corrugated", "definition": "(형) 주름이 있고 겉이 물결 모양임", "en": "(adj.) wrinkled, with a wavy exterior"}, {"term": "criterion", "definition": "(명) 무언가를 판단하거나 평가하는 기준 또는 규칙", "en": "(n.) a standard or rule by which something is judged or criticized"}, {"term": "emulate", "definition": "(동) 존경하는 것을 모방하다", "en": "(v.) to imitate something admired"}, {"term": "exhaustive", "definition": "(형) 철저하고 완전한", "en": "(adj.) thorough and complete"}, {"term": "fathom", "definition": "(동) 이해하다, 파악하다", "en": "(v.) to understand, comprehend"}, {"term": "frugal", "definition": "(형) 검소한, 경제적", "en": "(adj.) thrifty, economical"}, {"term": "induce", "definition": "(동) ~을 일으키다, 자극하다", "en": "(v.) to bring about, stimulate"}, {"term": "jolt", "definition": "(동) 갑자기 거칠게 밀거나 흔들다; (명) 갑작스럽고 거칠거나 격렬한 충격", "en": "(v.) to push or shake abruptly and roughly; (n.) an abrupt rough or violent shake"}, {"term": "marginal", "definition": "(형) 질이나 중요성이 의심스럽거나 미미한 (-)", "en": "(adj.) of questionable or minimal quality or importance (-)"}, {"term": "mesmerized", "definition": "(형) 최면에 걸린 듯 무언가나 누군가에게 사로잡힌", "en": "(adj.) captivated by something or someone, like hypnotized"}, {"term": "objective", "definition": "(형) 객관적인; 편견 없는", "en": "(adj.) unbiased; unprejudiced"}, {"term": "occult", "definition": "(형) 초자연적인, 신비로운, 마법적인", "en": "(adj.) supernatural, mysterious, magical"}, {"term": "parable", "definition": "(명) 도덕적 메시지가 담긴 이야기, 인간 캐릭터가 등장하는 우화", "en": "(n.) a story with a moral message, a fable with human characters"}, {"term": "prodigious", "definition": "(형) 부피, 양 또는 정도가 엄청나게 큰; 경이로움을 일으키는", "en": "(adj.) extremely large in bulk, quantity, or degree; (adj.) causing amazement or wonder"}, {"term": "suffice", "definition": "(동) 충분하다; 족하다", "en": "(v.) to be sufficient; to be enough"}, {"term": "vaunted", "definition": "(형) 흔히 허영심이나 오만함을 담아 크게 칭찬되거나 널리 자랑된", "en": "(adj.) highly praised or widely boasted about, often in a vain/arrogant way"}], "8": [{"term": "allegiance", "definition": "(명) 대의, 국가 또는 통치자에 대한 충성", "en": "(n.) loyalty to a cause, nation, or ruler"}, {"term": "boisterous", "definition": "(형) 시끄럽고 활기찬", "en": "(adj.) loud and full of energy"}, {"term": "counteract", "definition": "(동) 상쇄하다, 효과를 없애다", "en": "(v.) to neutralize, make ineffective"}, {"term": "depict", "definition": "(동) 그림으로 나타내다; 묘사하다", "en": "(v.) to give a picture of; to describe"}, {"term": "don", "definition": "(동) 옷을 몸에 걸치다, 입다", "en": "(v.) put clothing on one's body"}, {"term": "equanimity", "definition": "(명) 평정; 압박감 속에서도 평온함; 침착함", "en": "(n.) composure; calmness under pressure; aplomb"}, {"term": "erratic", "definition": "(형) 일관성이 없는, 예측할 수 없는 (-)", "en": "(adj.) inconsistent, unpredictable (-)"}, {"term": "flagrant", "definition": "(형) 명백하게 잘못된, 지독한", "en": "(adj.) obviously bad, egregious"}, {"term": "flaunt", "definition": "(동) 눈에 띄게 또는 대담하게 행진하거나 전시하다; 과시하다", "en": "(v.) to parade or display conspicuously or boldly; to show off"}, {"term": "generic", "definition": "(형) 전체 부류에 공통된; 특정하지 않은", "en": "(adj.) characteristic of a whole group; not specific"}, {"term": "harmonious", "definition": "(형) 서로 잘 어울리는; 서로 다른 요소가 기분 좋게 조화를 이루는; 선율이 아름다운", "en": "(adj.) able to get along together well; combining different elements that blend pleasingly; melodious"}, {"term": "harp", "definition": "(동) 끊임없이 불평하다 (-)", "en": "(v.) complain incessantly (-)"}, {"term": "ideology", "definition": "(명) 그룹의 원칙 또는 신념", "en": "(n.) principles or beliefs of a group"}, {"term": "indiscriminate", "definition": "(형) 가리지 않는; 세심한 구별이나 일정한 기준이 없는", "en": "(adj.) not selective; without careful distinction or pattern"}, {"term": "lest", "definition": "(접) 그렇지 않으면; ~할 위험을 피하기 위해", "en": "(conj.) or else, to avoid the risk of"}, {"term": "mandate", "definition": "(명) 권위 있는 명령", "en": "(n.) an authoritative command"}, {"term": "odyssey", "definition": "(명) 흔히 운명의 여러 변화를 겪는 길고 힘든 여정", "en": "(n.) a long difficult journey usually marked by many changes of fortune"}, {"term": "onerous", "definition": "(형) 부담스러운", "en": "(adj.) burdensome"}, {"term": "pathetic", "definition": "(형) 강한 감정, 특히 연민과 슬픔을 자아내는; 사람의 감정을 움직이는; 불쌍한; 한심할 만큼 형편없는", "en": "(adj.) marked by strong emotion, especially pity and sorrow; able to move people emotionally; worthy of pity; woefully inadequate"}, {"term": "pompous", "definition": "(형) 자만심이 있거나 그것을 드러내는 (-)", "en": "(adj.) having or exhibiting self-importance (-)"}, {"term": "prescribe", "definition": "(동) 따라야 할 규칙이나 방침으로 정하다; 의료 목적으로 처방하다", "en": "(v.) to order as a rule or course to be followed; to order for medical purpose"}, {"term": "rote", "definition": "(명) 생각 없는 기계적 반복; (형) 생각 없이 반복하는", "en": "(n.) unthinking repetition; (adj.) in an unthinking, repetitive way"}, {"term": "spawn", "definition": "(동) 알을 낳다(대량으로); (많은 수로) 자손을 낳다", "en": "(v.) to lay eggs (in large numbers); produce offspring (in large numbers)"}, {"term": "stark", "definition": "(형) 꾸밈없이 단순한", "en": "(adj.) plain, without decoration"}, {"term": "whimsical", "definition": "(형) 공상적인, 변덕스러운", "en": "(adj.) fanciful, capricious"}], "9": [{"term": "asunder", "definition": "(형) 여러 부분이나 조각으로(\"tear\"와 함께 씀)", "en": "(adj.) into parts or pieces (with \"tear\")"}, {"term": "cant", "definition": "(명) 진실하지 않거나 위선적인 말", "en": "(n.) insincere of hypocritical speech"}, {"term": "caustic", "definition": "(형) 신랄한, 독설적인, 부식성의", "en": "(adj.) bitter, biting, acidic"}, {"term": "conscientious", "definition": "(형) 철저한; 세심한; 정직한; 원칙을 지키는", "en": "(adj.) thorough; careful / honest; principled"}, {"term": "consternation", "definition": "(명) 당혹감, 혼란", "en": "(n.) dismay, confusion"}, {"term": "decipher", "definition": "(동) 암호나 비밀 문자를 일반 언어로 바꾸다, 해독하다; 난해한 것의 의미를 해석하다, 풀다", "en": "(v.) to convert from a code or secret writing into ordinary language; to decode / to interpret the meaning of something puzzling; to solve"}, {"term": "degrade", "definition": "(동) 품위나 지위를 낮추다; 타락시키다; 악화되다", "en": "(v.) to lower in dignity or status; to corrupt; to deteriorate"}, {"term": "disparity", "definition": "(명) 크고 흔히 부당한 격차", "en": "(n.) a great (and unusually unfair) difference"}, {"term": "equivocal", "definition": "(형) 모호한, 불확실한, 결정되지 않은", "en": "(adj.) ambiguous, uncertain, undecided"}, {"term": "evanescent", "definition": "(형) 덧없는, 빨리 사라지는, 단명하는", "en": "(adj.) fleeting, vanishing quickly, short-lived"}, {"term": "folly", "definition": "(명) 어리석음 또는 어리석은 행동", "en": "(n.) foolishness or a stupid action"}, {"term": "indulge", "definition": "(동) 바람이나 욕구에 굴복하다, ~에 빠지다", "en": "(v.) to give in to a wish or desire, give oneself up to"}, {"term": "insidious", "definition": "(형) 은밀하게 피해를 입히는 (-)", "en": "(adj.) causing harm in a sneaky way (-)"}, {"term": "languish", "definition": "(동) 쓰이지 않아 쇠약해지다 (-)", "en": "(v.) to weaken through disuse (-)"}, {"term": "paradox", "definition": "(명) 겉보기에는 모순되지만 사실일 수도 있는 진술", "en": "(n.) an apparently contradictory statement that is perhaps true"}, {"term": "pioneer", "definition": "(명) 1. 어떤 지역에 처음 정착한 사람 중 한 명; 2. 혁신가 또는 창시자", "en": "(n.) 1. one of the first to populate an area. 2. an innovator or originator"}, {"term": "pittance", "definition": "(명) 아주 적은 금액, 특히 돈", "en": "(n.) a very small amount, especially of money"}, {"term": "porous", "definition": "(형) 작은 구멍이나 틈이 많은; 기체나 액체가 쉽게 통과하는", "en": "(adj.) full of tiny holes or spaces; easily penetrated by gas or liquid"}, {"term": "prevalent", "definition": "(형) 흔히 발생하는; 널리 받아들여지거나 행해지는", "en": "(adj.) commonly occurring; widely accepted or practiced"}, {"term": "rift", "definition": "(명) 갈라짐, 단절, 균열", "en": "(n.) a split, break, breach"}, {"term": "spate", "definition": "(명) 갑작스러운 쇄도 또는 쏟아짐", "en": "(n.) a sudden rush or outpouring"}, {"term": "sterling", "definition": "(형) 진짜의, 훌륭한; 법정 순도의 은으로 만든", "en": "(adj.) genuine, excellent; made of silver of standard fineness"}, {"term": "substantiate", "definition": "(동) 증거로 뒷받침하다", "en": "(v.) to support with evidence"}, {"term": "unscrupulous", "definition": "(형) 출세를 위해 거리낌 없이 비윤리적인 행동을 하는; 부정한 (-)", "en": "(adj.) willing to be unethical in order to get ahead; devious"}, {"term": "vehement", "definition": "(형) 감정을 격렬하게 드러내는", "en": "(adj.) forcefully expressing emotion"}], "10": [{"term": "apartheid", "definition": "(명) 남아프리카공화국의 인종차별과 억압이라는 혐오스러운 정책", "en": "(n.) the abhorrent policy of racial segregation and oppression in South Africa"}, {"term": "cabal", "definition": "(명) 음모를 꾸미는 집단 (-)", "en": "(n.) a group of plotters (-)"}, {"term": "cavalier", "definition": "(형) 무심하거나 태평하게 무시하는; 거만한", "en": "(adj.) showing an offhand or carefree disregard; arrogant"}, {"term": "conciliatory", "definition": "(형) 화해하거나 달래어 평화를 이루려는 (+)", "en": "(adj.) wanting to make up, appease, make peace (+)"}, {"term": "correlation", "definition": "(명) 사실이나 사건 사이의 연결", "en": "(n.) a connection between facts or events"}, {"term": "demeanor", "definition": "(명) 행동거지; 태도", "en": "(n.) behavior; bearing"}, {"term": "ebullient", "definition": "(형) 매우 활기차고 열정적인", "en": "(adj.) extremely lively, enthusiastic"}, {"term": "elastic", "definition": "(형) 늘어나서 원래 모양으로 돌아갈 수 있음", "en": "(adj.) able stretch and return to normal shape"}, {"term": "espouse", "definition": "(동) 지지하다, 옹호하다", "en": "(v.) to support, to advocate"}, {"term": "exposition", "definition": "(명) 설명; 대규모 공개 전시회", "en": "(n.) explanation; a large public exhibition"}, {"term": "grit", "definition": "(명) 아주 고운 모래나 자갈; 고난이나 위험에 맞서는 용기; (동) 갈다; 거친 마찰음을 내다", "en": "(n.) very fine sand or gravel, courage in the face of hardship or danger; (v.) to grind; to make a grating sound"}, {"term": "impartial", "definition": "(형) 공정한, 편견이 없는, 공평한, 어느 한쪽 편을 들지 않는", "en": "(adj.) just, unbiased, fair, not taking sides"}, {"term": "imperative", "definition": "(형) 필요한, 긴급한", "en": "(adj.) necessary, urgent"}, {"term": "indict", "definition": "(동) 범죄 혐의로 기소하다(\"-ict\"가 아니라 \"-ite\"로 발음)", "en": "(v.) to charge with a crime (say \"-ite,\" not \"-ict\")"}, {"term": "indifferent", "definition": "(형) 어느 쪽으로든 신경 쓰지 않음", "en": "(adj.) not caring one way or the other"}, {"term": "maverick", "definition": "(명) 독립적이고 비순응적인 사람", "en": "(n.) an independent, nonconformist person"}, {"term": "pedantic", "definition": "(형) 학식을 과시하는; 지나치게 학구적인 (-)", "en": "(adj.) showing off learning; bookish (-)"}, {"term": "plausible", "definition": "(형) 믿을 만한, 합리적인, 사실일 법한", "en": "(adj.) believable, reasonable, likely to be true"}, {"term": "postulate", "definition": "(동) 이용 가능한 최선의 증거를 바탕으로 사실이라고 가정하다; (명) 자명하다고 가정하는 것; 기본 원리", "en": "(v.) to assume as a fact based on the best available evidence; (n.) something assumed to be self-evident; a fundamental principle"}, {"term": "propaganda", "definition": "(명) 어떤 대의나 신념을 퍼뜨리기 위해 사용하는, 흔히 오해를 부르거나 거짓인 정보", "en": "(n.) information, often misleading or false, used to promote a cause or set of beliefs"}, {"term": "provincial", "definition": "(형) 지방의; 시야가 제한된; 편협한; 세련되지 못한 (-)", "en": "(adj.) pertaining to a province; limited in outlook; narrow; unsophisticated (-)"}, {"term": "purported", "definition": "(형) 소문난; ~라고 주장되는", "en": "(adj.) rumored; claimed"}, {"term": "tenuous", "definition": "(형) 1. 내용이 빈약한; 허술한; 2. 두껍지 않고 가느다란; 3. 밀도가 낮은; 희박한", "en": "(adj.) 1. lacking substance; flimsy. 2. not thick, slender. 3. lacking density; thin."}, {"term": "thwart", "definition": "(동) 진행이나 성공을 방지하다", "en": "(v.) to prevent from progressing or succeeding"}, {"term": "trove", "definition": "(명) 가치 있는 수집물(보통 보물)", "en": "(n.) a valuable collection (usually of treasure)"}], "11": [{"term": "abstract", "definition": "(형) 물리적 형태 없이 관념으로 존재하는", "en": "(adj.) existing as an idea without physical form"}, {"term": "absurd", "definition": "(형) 우스꽝스러운, 어리석은, 비논리적인", "en": "(adj.) ridiculous, silly, illogical"}, {"term": "affluence", "definition": "(명) 부유함 또는 많은 부를 가진 상태", "en": "(n.) wealth or the state of having lots of wealth"}, {"term": "ample", "definition": "(형) 충분하고도 남는, 넉넉한", "en": "(adj.) more than enough, large"}, {"term": "conduit", "definition": "(명) 무언가가 통과하는 파이프 또는 채널", "en": "(n.) a pipe or channel through which something passes"}, {"term": "divergent", "definition": "(형) 서로 다른 방향으로 향하는; 서로 다른; 관습에서 벗어난, 일탈적인", "en": "(adj.) going in different directions; different from each other; departing from conversation, deviant"}, {"term": "extol", "definition": "(동) 크게 칭찬하다, 찬양하다", "en": "(v.) to praise, revere"}, {"term": "exuberant", "definition": "(형) 기쁘고 흥분한; 열정이 넘치는 (+)", "en": "(adj.) happy and excited; bubbling over with enthusiasm (+)"}, {"term": "fleece", "definition": "(명) 양이나 비슷한 동물의 털; (동) 속임수로 돈을 뜯어내다 (-)", "en": "(n.) the wool of a sheep or similar animal; (v) to cheat or rip off by deception (-)"}, {"term": "founder", "definition": "(동) 완전히 실패하다, 가라앉다(-)", "en": "(v.) to fail completely, sink (-)"}, {"term": "fraternal", "definition": "(형) 형제의, 형제애가 있는", "en": "(adj.) brotherly"}, {"term": "inhibit", "definition": "(동) 방지하다, 제지하다, 멈추다", "en": "(v.) to prevent, restrain, stop"}, {"term": "lament", "definition": "(동) 슬퍼하다; 슬픔을 표현하다", "en": "(v.) to grieve; express sorrow"}, {"term": "massive", "definition": "(형) 크고 무겁다; 규모나 범위가 매우 크다", "en": "(adj.) large and heavy; great in size or scope"}, {"term": "maxim", "definition": "(명) 격언 또는 금언", "en": "(n.) a proverb or saying"}, {"term": "ode", "definition": "(명) 사물이나 사람을 찬양하는 시", "en": "(n.) a poem in praise of an object or person"}, {"term": "orientation", "definition": "(명) 물체가 향하는 방향", "en": "(n.) the direction that an object is facing"}, {"term": "precarious", "definition": "(형) 위험이 도사리는, 불안정한", "en": "(adj.) fraught with danger"}, {"term": "rationale", "definition": "(명) 근본적인 이유 또는 설명", "en": "(n.) an underlying reason or explanation"}, {"term": "reciprocal", "definition": "(형) 양쪽이 서로 주고받는", "en": "(adj.) shared by two sides"}, {"term": "reiterate", "definition": "(동) 다시 말하거나 행하다; 반복하다", "en": "(v.) to say or do over again; to repeat"}, {"term": "rigorous", "definition": "(형) 매우 철저하거나 강도 높은; (규칙이나 체계가) 엄격히 적용되는", "en": "(adj.) very thorough or intense; strictly followed (for rules/system)"}, {"term": "sow", "definition": "(명) 암퇘지; (동) 씨앗을 심거나 뿌리다", "en": "(n.) a female pig; (v.) to plant or scatter seeds"}, {"term": "teem", "definition": "(동) 활발하게 움직이는 것들로 가득 차 있거나 득실거리다", "en": "(v.) to be full of or swarming with actively moving things"}, {"term": "vicious", "definition": "(형) 사악한, 나쁜; 악의적인; 나쁜 습관이나 흉악한 성질을 지닌; 고통스러울 만큼 심한", "en": "(adj.) evil, bad; spiteful; having bad habits or an ugly disposition; painfully severe or extreme"}], "12": [{"term": "abide", "definition": "1. (동) 참다, 견디다; 2. (동) 머무르다", "en": "1. (v.) to put up with, 2. (v.) to remain"}, {"term": "antagonism", "definition": "(명) 적대감", "en": "(n.) hostility"}, {"term": "bizarre", "definition": "(형) 매우 비범하고 기이한; 별난", "en": "(adj.) strikingly out of the ordinary; peculiar"}, {"term": "brink", "definition": "(명) 가장자리 또는 테두리", "en": "(n.) an edge or border"}, {"term": "complement", "definition": "(동) 완전하거나 완벽하게 만들다 (+)", "en": "(v.) to make complete or perfect (+)"}, {"term": "complexion", "definition": "(명) 얼굴 피부의 질감과 색상", "en": "(n.) texture and color of the skin of the face"}, {"term": "conspicuous", "definition": "(형) 쉽게 눈에 띄는, 분명한", "en": "(adj.) easy to notice, obvious"}, {"term": "consumption", "definition": "(명) 소비하는 행위", "en": "(n.) the act of consuming"}, {"term": "curmudgeon", "definition": "(명) 괴팍한 사람, 주로 노인 (-)", "en": "(n.) a cranky person, usually old (-)"}, {"term": "decry", "definition": "(동) 공개적으로 비판하다", "en": "(v.) to criticize openly"}, {"term": "divine", "definition": "(형) 신성한, 지극히 훌륭한", "en": "(adj.) godly, exceedingly wonderful"}, {"term": "edict", "definition": "(명) 명령, 법령", "en": "(n.) an order, decree"}, {"term": "entity", "definition": "(명) 존재하는 별개의 것(살아 있든 없든)", "en": "(n.) a distinct thing (living or not) that exists"}, {"term": "exalt", "definition": "(동) 영광스럽게 하다, 찬양하다", "en": "(v.) to glorify, praise"}, {"term": "ingenuous", "definition": "(형) 순진하고 남을 잘 믿는; 어린; 세련되지 않은; 솔직한", "en": "(adj.) naive and trusting; young; unsophisticated; candid"}, {"term": "integrity", "definition": "(명) 정직, 신뢰성; 온전함", "en": "(n.) honesty, trustworthiness; wholeness"}, {"term": "invoke", "definition": "(동) 마법으로 또는 마법을 부리듯 불러내다", "en": "(v.) evoke or call forth, with or as if by magic"}, {"term": "municipal", "definition": "(형) 마을이나 도시의 정부와 관련된", "en": "(adj.) relating to the government of a town or city"}, {"term": "nonchalant", "definition": "(형) 걱정이나 관심이 없는 듯한, 무심한", "en": "(adj.) showing a lack of concern, indifference"}, {"term": "pseudonym", "definition": "(명) 가명; 필명", "en": "(n.) false name; pen name"}, {"term": "stature", "definition": "(명) 키; 지위", "en": "(n.) height; rank"}, {"term": "synthetic", "definition": "(형) 자연적으로 만들어지지 않은; 인공 과정으로 만든", "en": "(adj.) not naturally produced; made by artificial processes"}, {"term": "taint", "definition": "(명) 얼룩이나 흠; 부패의 흔적", "en": "(n.) a stain or spot, a mark of corruption"}, {"term": "temperament", "definition": "(명) 동물이나 개인의 본성, 특히 행동에 영향을 미치는 경우", "en": "(n.) the nature of an animal or individual, esp as it affects behavior"}, {"term": "wholesome", "definition": "(형) 건강에 좋은; 도덕적·사회적으로 건전하고 바람직한; 건강을 증진하거나 지키는 데 도움이 되는", "en": "(adj.) healthy; morally and socially sound and good; helping to bring about or preserve good health"}], "13": [{"term": "anachronism", "definition": "(명) 제 시대가 아닌 때에 발생하거나 존재하는 것", "en": "(n.) anything occurring or existing out of its proper time"}, {"term": "animosity", "definition": "(명) 강렬한 악의, 신랄함, 적대감", "en": "(n.) intense ill will, acrimony, enmity"}, {"term": "antipathy", "definition": "(명) 강한 반감 또는 혐오", "en": "(n.) intense dislike/aversion"}, {"term": "console", "definition": "(동) 위로하다; (명) 오르간의 건반; 전기 또는 기계 장치의 제어판", "en": "(v.) to comfort; (n.) the keyboard of an organ; a control panel for an electrical or mechanical device"}, {"term": "constituent", "definition": "(명) 1. 전체를 구성하는 한 부분; 2. 선출된 공무원이 대표하는 투표권 있는 시민", "en": "(n.) 1. one part that makes up a whole; 2. a voting citizen represented by an elected official"}, {"term": "corroborate", "definition": "(동) 사실임을 확인하다; 증거로 뒷받침하다", "en": "(v.) to confirm the truth of; support with evidence"}, {"term": "default", "definition": "(명) 1. 의무나 법이 요구하는 일을 이행하지 않음; 2. 사용자가 선택하지 않을 때 적용되는 기본 선택값(특히 컴퓨터에서); (동) 빚을 제때 갚지 못하다", "en": "(n.) 1. a failure to do what is required by duty or law; 2. an automatic selection (esp. on a computer) that is used when a user doesn't make a choice. (v.) to fail to pay a debt on time"}, {"term": "discourse", "definition": "(명) 서면 또는 구두 의사소통 또는 토론", "en": "(n.) written or spoken communication or debate"}, {"term": "dub", "definition": "(동) ~에게 직위, 별명, 설명을 부여하다", "en": "(v.) to give a title, nickname, or description to"}, {"term": "endorse", "definition": "(동) 공개적으로 지지나 승인을 표시하다", "en": "(v.) to openly show support or approval"}, {"term": "epilogue", "definition": "(명) 후기; 책의 짧은 맺음말; 연극 끝의 짧은 연설", "en": "(n.) an afterword; a short concluding chapter of a book; a short speech at the end of a play"}, {"term": "idiosyncratic", "definition": "(형) 특이한, 개인에게 고유한", "en": "(adj.) peculiar, or unique to an individual"}, {"term": "indispensable", "definition": "(형) 꼭 필요한, 소홀히 할 수 없는", "en": "(adj.) absolutely necessary, not to be neglected"}, {"term": "maintain", "definition": "(동) (1) 계속하다; 존속시키다; (2) 주장하다, 단언하다", "en": "(v.) (1) to continue, carry on; to keep in existence; (2) to claim or assert"}, {"term": "manifest", "definition": "1. (형) 쉽게 이해되는, 명백한; 2. (동) 분명히 나타내다", "en": "1. (adj.) easily understandable, obvious, 2. (v.) to show plainly"}, {"term": "notorious", "definition": "(형) 나쁜 일로 유명한", "en": "(adj.) famous for something bad"}, {"term": "outmoded", "definition": "(형) 더 이상 필요하지 않거나 유행에 뒤진 (-)", "en": "(adj.) no longer needed or fashionable (-)"}, {"term": "pensive", "definition": "(형) 깊은 생각에 잠긴; 몽상하듯 생각에 잠긴", "en": "(adj.) deep in thought; dreamily thoughtful"}, {"term": "ploy", "definition": "(명) 게임이나 대화에서의 책략(특히 사기성)", "en": "(n.) a maneuver in a game or conversation (esp. deceptive)"}, {"term": "sedate", "definition": "(형) 차분하고 침착한 (+)", "en": "(adj.) calm and composed (+)"}, {"term": "servitude", "definition": "(명) 자유의 부족; 강제 노동/노예화", "en": "(n.) a lack of freedom; forced labor/enslavement"}, {"term": "sinister", "definition": "(형) 사악하거나 위험해 보이는; 악이나 해를 끼칠 듯한", "en": "(adj.) appearing evil or dangerous; threatening evil or harm"}, {"term": "spirited", "definition": "(형) 생기와 활력이 넘치는; 용감한", "en": "(adj.) full of life and vigor; courageous"}, {"term": "tedious", "definition": "(형) 따분한, 지루한", "en": "(adj.) dull, boring"}, {"term": "uncanny", "definition": "(형) 초자연적인 성격이나 기원을 지닌; 신비하고 기이한", "en": "(adj.) of supernatural character or origin; mysterious and weird"}], "14": [{"term": "apocalyptic", "definition": "(형) 보편적 파괴를 예측하거나 전조함", "en": "(adj.) predicting or presaging universal destruction"}, {"term": "arid", "definition": "(형) 기후가 매우 건조함", "en": "(adj.) extremely dry in climate"}, {"term": "conducive", "definition": "(형) ~을 일으키거나 초래하는 경향이 있는", "en": "(adj.) tending to cause or bring about"}, {"term": "cursory", "definition": "(형) 성급하고 세부사항에 주의하지 않음", "en": "(adj.) hasty and without attention to detail"}, {"term": "deference", "definition": "(명) 존중하는 마음에서 따름", "en": "(n.) respectful submission"}, {"term": "disinterested", "definition": "(형) 편견 없음", "en": "(adj.) unbiased"}, {"term": "effectual", "definition": "(형) 효과적인; 충분한", "en": "(adj.) effective; adequate"}, {"term": "facilitate", "definition": "(동) 쉽게 만들다", "en": "(v.) to make easier"}, {"term": "hierarchy", "definition": "(명) 계급이나 순위에 따라 배열된 체계", "en": "(n.) a series arranged by rank"}, {"term": "implement", "definition": "1. (명) 기구, 도구, 연장; 2. (동) 시행하다, 실시하다", "en": "1. (n.) an instrument, utensil, tool, 2. (v.) to put into effect, to institute"}, {"term": "indignant", "definition": "(형) 부당하거나 잘못된 일에 분노한", "en": "(adj.) angered at something unjust or wrong"}, {"term": "intuition", "definition": "(명) 이성을 사용하지 않고 무언가를 알거나 감지하는 능력; 직감", "en": "(n.) knowing or sensing something without the use of reason; an insight"}, {"term": "meticulous", "definition": "(형) 세부 사항까지 매우 주의 깊은", "en": "(adj.) extremely careful with details"}, {"term": "outright", "definition": "(형) 완전한; 즉각적인; 거리낌 없는, 철저한; (부) 완전히, 즉시", "en": "(adj.) complete; instantaneous; without reservation, thoroughgoing; (adv.) completely, instantaneously"}, {"term": "qualify", "definition": "(동) 수정하거나 제한하다", "en": "(v.) to modify or restrict"}, {"term": "rail", "definition": "(동) 꾸짖다, 항의하다", "en": "(v.) to scold, protest"}, {"term": "rebuke", "definition": "(동) 꾸짖다, 비판하다", "en": "(v.) to scold, criticize"}, {"term": "relic", "definition": "(명) 이전부터 살아남은 오래된 물건이나 관습", "en": "(n.) an old object or custom that survived from an earlier time"}, {"term": "retrieve", "definition": "(동) 찾아서 되가져오다, 되찾다; 바로잡다, 회복하다", "en": "(v.) to find and bring back, get back; to put right, make good"}, {"term": "somber", "definition": "(형) 침울한, 엄숙한, 진지한", "en": "(adj.) gloomy, grave, or solemnly serious"}, {"term": "sovereign", "definition": "(형) 특정 영역에서 절대 권력을 가진; 자치적이고 독립적인", "en": "(adj.) having absolute authority in a certain realm; self-governing and independent"}, {"term": "testify", "definition": "(동) 목격한 것을 공식적으로 진술하다; 증거가 되다", "en": "(v.) to formally state what one witnessed; to show evidence of"}, {"term": "trappings", "definition": "(명) 외부 장식, 장식품, 액세서리", "en": "(n.) outward decorations, ornaments, accessories"}, {"term": "unremitting", "definition": "(형) 멈추거나 느려지지 않는; 끊임없는", "en": "(adj.) not stopping or slowing down; constant"}, {"term": "usurp", "definition": "(동) 강제로 빼앗다, 권리 없이 점유하다", "en": "(v.) to seize by force, take possession of without right"}], "15": [{"term": "amass", "definition": "(동) 모으다, 축적하다", "en": "(v.) to gather or accumulate"}, {"term": "antiquity", "definition": "(명) 고대 세계, 특히 중세 이전", "en": "(n.) the ancient world, especially before the Middle Ages"}, {"term": "artisan", "definition": "(명) 숙련된 노동자 또는 장인", "en": "(n.) a skilled worker or craftsperson"}, {"term": "coherent", "definition": "(형) 논리적으로 일관성이 있는, 이해하기 쉬운", "en": "(adj.) logically consistent, intelligible"}, {"term": "competent", "definition": "(형) 필요한 일을 해낼 능력이 있는", "en": "(adj.) having the ability to do what is needed"}, {"term": "covet", "definition": "(동) 남의 것을 시기하며 탐내다", "en": "(v.) to desire enviously"}, {"term": "dubious", "definition": "(형) 의심스러운, 품질이 불확실한", "en": "(adj.) doubtful, of uncertain quality"}, {"term": "empirical", "definition": "(형) 이론보다 경험에 근거한", "en": "(adj.) based on experience rather than theory"}, {"term": "foil", "definition": "(동) 다른 사람이 계획을 성공시키지 못하게 막다; (명) 대비를 이루는 인물; 펜싱용의 얇고 유연한 검", "en": "(v.) to keep a person from succeeding in a plan; a character that provides a contrast; a thin, flexible sword for fencing"}, {"term": "insurrection", "definition": "(명) 반란; 봉기", "en": "(n.) rebellion; uprising"}, {"term": "meager", "definition": "(형) 크기나 질이 빈약한", "en": "(adj.) deficient in size or quality"}, {"term": "mitigate", "definition": "(동) 덜 심하게 만들다, 완화하다", "en": "(v.) to make less violent, alleviate"}, {"term": "myriad", "definition": "(형) 매우 많은 수로 이루어진", "en": "(adj.) consisting of a very great number"}, {"term": "patronize", "definition": "(동) 1. 단골 고객이나 후원자(특히 예술 분야)가 되다; 2. 누군가를 깔보며 말하거나 거만하게 대하다", "en": "(v.) 1. to be regular customer or a supporter (esp. art); 2. to talk down do or treat someone in a condescending way"}, {"term": "pious", "definition": "(형) 신앙심이 깊은(때로는 비꼬는 뜻으로 사용됨)", "en": "(adj.) deeply religious (sometimes used sarcastically)"}, {"term": "pundit", "definition": "(명) 전문 평론가, 비평가 또는 분석가", "en": "(n.) an expert commentator, critic, or analyst"}, {"term": "quagmire", "definition": "(명) 어려운 상황; 늪이나 습지", "en": "(n.) a difficult situation; a swamp or bog"}, {"term": "sanction", "definition": "(동) 공식적인 허가나 승인을 주다; (명) 국가에 대한 처벌, 종종 경제적", "en": "(v.) to give official permission or approval; (n.) a punishment against a country, often economic"}, {"term": "sanguine", "definition": "(형) 낙천적인, 명랑한", "en": "(adj.) optimistic, cheery"}, {"term": "speculate", "definition": "(동) (1) 생각하거나 추측하다; (2) 위험한 사업이나 투자에 뛰어들다", "en": "(v.) (1) to think about or make guesses; (2) to engage in a risky business venture"}, {"term": "subdued", "definition": "(형) 억눌린, 제압된", "en": "(adj.) held down, overpowered"}, {"term": "tenant", "definition": "(명) 집이나 아파트를 임대하는 사람", "en": "(n.) someone who rents a house or apartment"}, {"term": "tout", "definition": "(동) 선전하다, 지나치게 칭찬하다 (-)", "en": "(v.) to publicize, praise excessively (-)"}, {"term": "transgress", "definition": "(동) 위반하다, 한계나 법을 넘어서다", "en": "(v.) to violate, go over a limit or law"}, {"term": "traverse", "definition": "(동) 넘거나 가로지르거나 통과하다", "en": "(v.) to pass over, across, or through"}], "16": [{"term": "ambivalent", "definition": "(형) 서로 상반되는 감정을 지닌", "en": "(adj.) having opposing feelings"}, {"term": "anguish", "definition": "(명) 극도의 슬픔, 고통", "en": "(n.) extreme sadness, torment"}, {"term": "ascribe", "definition": "(동) ~의 것으로 돌리다, ~의 공으로 여기다, ~에 귀속시키다", "en": "(v.) to assign, credit, attribute to"}, {"term": "astute", "definition": "(형) 매우 영리한, 약삭빠른", "en": "(adj.) very clever, crafty"}, {"term": "baffled", "definition": "(형) 완전히 혼란스럽거나 어리둥절한", "en": "(adj.) totally confused or puzzled"}, {"term": "bolster", "definition": "(동) 강화하거나 뒷받침하다", "en": "(v.) to strengthen or support"}, {"term": "cite", "definition": "(동) 인용하다; 언급하다; 법정 출두를 명하다; 표창하거나 추천하다", "en": "(v.) to quote; to mention; to summon to appear in court; to commend, recommend"}, {"term": "conceit", "definition": "(명) 지나친 자만심 (-); 정교하게 확장된 은유", "en": "(n.) feelings of excessive pride (-); an elaborate extended metaphor"}, {"term": "covenant", "definition": "(명) 엄숙한 합의, 계약, 서약", "en": "(n.) a solemn agreement, a contract, a pledge"}, {"term": "deploy", "definition": "(동) 전투를 위한 위치에 군대나 장비를 배치하다, 사용하다", "en": "(v.) to arrange troops or equipment in position for battle, to put into use"}, {"term": "dire", "definition": "(형) 극도의 위험으로 가득 찬 (-)", "en": "(adj.) fraught with extreme danger (-)"}, {"term": "epoch", "definition": "(명) 서로 관련된 일련의 사건들로 특징지어지는 긴 시대", "en": "(n.) an extended period of time marked by a series of related events"}, {"term": "fugitive", "definition": "(명) 달아나거나 도피하는 사람; (형) 덧없는, 아주 짧게 지속되는; 떠도는; 파악하기 어려운", "en": "(n.) one who flees or runs away; (adj.) fleeting, lasting a very short time; wandering; difficult to grasp"}, {"term": "icon", "definition": "(명) 형태가 의미를 암시하는 기호나 이미지; 종교화; 우상처럼 숭배받는 사람", "en": "(n.) a symbol/image whose form suggests its meaning; a religious painting; a person who is idolized"}, {"term": "lavish", "definition": "(형) 매우 호화롭거나 풍부한; (동) 아낌없이 주다", "en": "(adj.) very luxurious or abundant; (v.) to give in abundance"}, {"term": "lax", "definition": "(형) 부주의한; 엄격하지 않은 (-)", "en": "(adj.) careless; not strict (-)"}, {"term": "melancholy", "definition": "(명) 생각에 잠긴 슬픔; 우울함", "en": "(n.) a feeling of thoughtful sadness; depression"}, {"term": "primordial", "definition": "(형) 태초부터 존재한; 근본적인", "en": "(adj.) existing at or since the beginning of time; basic"}, {"term": "putrid", "definition": "(형) 썩은, 악취가 나는", "en": "(adj.) rotten, foul"}, {"term": "rampant", "definition": "(형) 1. 행동이나 기세가 사나운; 2. 어디에나 만연하거나 억제되지 않은 (-)", "en": "(adj.) 1. violent in action or spirit 2. prevailing everywhere or unrestrained (-)"}, {"term": "repeal", "definition": "(동) (법률이나 법적 조치를) 취소하거나 무효화하다", "en": "(v.) to cancel or annul (a law or legal action)"}, {"term": "retrospect", "definition": "(명) 과거를 돌아보는 회고; 흔히 \"돌이켜 보면\"이라는 뜻으로 \"in\" 뒤에 씀", "en": "(n.) a backward-looking review; often used after \"in\" to mean \"looking backward\""}, {"term": "simultaneous", "definition": "(형) 동시에 일어나거나 존재하는", "en": "adj happening or existing at the same time"}, {"term": "spectrum", "definition": "(명) 서로 관련된 가치, 특성, 생각 또는 활동의 넓은 범위; 무지개의 색", "en": "(n.) broad range of related values or qualities or ideas or activities; the colors in the rainbow"}, {"term": "wary", "definition": "(형) 조심스러운, 경계하는", "en": "(adj.) watchful, alert"}], "17": [{"term": "abnormal", "definition": "(형) 평범하지 않은, 전형적이지 않은, 이상한", "en": "(adj.) not usual, not typical, strange"}, {"term": "albeit", "definition": "(접) 비록 ~이지만", "en": "(conj.) although"}, {"term": "axiom", "definition": "(명) 진리가 명백하여 증명이 필요 없는 진술 또는 원리; 격언", "en": "(n.) a statement/principle that requires no proof because its truth is obvious; a maxim"}, {"term": "blatant", "definition": "(형) 완전히 또는 불쾌할 만큼 눈에 띄는; 아주 명백한 (-)", "en": "(adj.) totally or offensively obtrusive; very obvious (-)"}, {"term": "bohemian", "definition": "(명) 관습에 얽매이지 않는 삶을 사는 비순응적인 작가나 예술가", "en": "(n.) a nonconformist writer or artist who lives an unconventional life"}, {"term": "callous", "definition": "(형) 무정한; 동정심이 없는 (-)", "en": "(adj.) unfeeling; unsympathetic (-)"}, {"term": "circumspect", "definition": "(형) 사려 깊고 신중한 (+)", "en": "(adj.) thoughtful and careful (+)"}, {"term": "complicity", "definition": "(명) 범죄에 가담함; 공범이 되는 행위", "en": "(n.) participation in wrongdoing; the act of being an accomplice"}, {"term": "cosmopolitan", "definition": "(형) 세련되고 세상 물정에 밝은 (+)", "en": "(adj.) sophisticated, worldly (+)"}, {"term": "disposition", "definition": "(명) 사람의 평소 기분; 기질; 일반적인 경향이나 성향", "en": "(n.) a person's usual mood; temperament; a regular tendency or inclination"}, {"term": "explicit", "definition": "(형) 완전하고 명확하게 표현되어 암시로만 남은 것이 없는", "en": "(adj.) fully and clearly expressed, leaving nothing merely implied"}, {"term": "exuberance", "definition": "(명) 쾌활한 열정, 활기", "en": "(n.) cheerful enthusiasm, liveliness"}, {"term": "homogeneous", "definition": "(형) 같거나 비슷한 부분으로 이루어진; 균질한", "en": "(adj.) composed of same or similar parts; uniform"}, {"term": "inverse", "definition": "(형) 방향이나 위치가 반대인; (명) 다른 것의 반대 또는 역", "en": "(adj.) in opposite direction or position; (n.) a thing that is the opposite or reverse of something else"}, {"term": "juvenile", "definition": "(형) 미성숙한; 청소년과 관련된; (명) 법적으로 성인이 아닌 청소년", "en": "(adj.) immature; relating to young people; (n.) a young person (not a legal adult)"}, {"term": "longevity", "definition": "(명) 어떤 것이나 사람이 지속되는 기간", "en": "(n.) the duration of time that something or someone persists"}, {"term": "maritime", "definition": "(형) 선박, 해운, 항해 또는 선원과 관련된", "en": "(adj.) relating to or involving ships, shipping, navigation, or sailors"}, {"term": "pristine", "definition": "(형) 새것 같은; 티 없이 깨끗한; 먼지나 부식이 없는", "en": "(adj.) like new; spotless; free of dirt and decay"}, {"term": "propriety", "definition": "(명) 적절하고 예의 바른 상태", "en": "(n.) the quality or state of being proper, decent"}, {"term": "refute", "definition": "(동) 거짓이거나 틀렸음을 입증하다", "en": "(v.) to prove false or wrong"}, {"term": "renown", "definition": "(명) 명예, 찬사", "en": "(n.) honor, acclaim"}, {"term": "robust", "definition": "(형) 강건한; 활기찬 (+)", "en": "(adj.) strong; vigorous (+)"}, {"term": "shun", "definition": "(동) 의도적으로 피하거나 무시하다", "en": "(v.) to intentionally avoid or ignore"}, {"term": "synthesis", "definition": "(명) 아이디어나 화합물의 조합", "en": "(n.) a combination of ideas or compounds"}, {"term": "venue", "definition": "(명) 행동이나 사건이 일어나는 장소; 혐의가 있는 범죄가 일어난 장소", "en": "(n.) the scene or locale of any action or event; the place of an alleged crime"}], "18": [{"term": "acumen", "definition": "(명) 예리한 통찰력", "en": "(n.) keen insight"}, {"term": "affluent", "definition": "(형) 부유한, 재산이 많은", "en": "(adj.) rich, wealthy"}, {"term": "agitation", "definition": "(명) (1) 신경성 불안이나 흥분; (2) 빠르게 휘젓거나 흔드는 행위", "en": "(n.) (1) nervous anxiety or excitement; ) (2) the act of stirring or shaking rapidly"}, {"term": "arduous", "definition": "(형) 힘든, 고된", "en": "(adj.) hard, strenuous"}, {"term": "brevity", "definition": "(명) 간결함, 짧음", "en": "(n.) conciseness, briefness"}, {"term": "clip", "definition": "(명) 적당히 빠른 속도", "en": "(n.) a moderately fast pace"}, {"term": "coarse", "definition": "(형) 만졌을 때 거친; 품위나 세련미가 부족한", "en": "(adj.) rough to touch; lacking taste or sophistication"}, {"term": "colloquial", "definition": "(형) 회화체의, 구어적인, 비격식적인", "en": "(adj.) conversational, slang, informal"}, {"term": "confide", "definition": "(동) 비밀 정보를 털어놓다", "en": "(v.) to share secret information"}, {"term": "credence", "definition": "(명) 믿음 또는 지적 수용", "en": "(n.) belief or intellectual acceptance"}, {"term": "customary", "definition": "(형) 통상적인, 예상되는, 일상적인", "en": "(adj.) usual, expected, routine"}, {"term": "devious", "definition": "(형) 정직하거나 직접적이지 않은, 기만적인", "en": "(adj.) not straightforward, deceitful"}, {"term": "discrepancy", "definition": "(명) 차이, 서로 일치하지 않음", "en": "(n.) difference, failure of things to correspond"}, {"term": "elation", "definition": "(명) 큰 기쁨의 느낌", "en": "(n.) a feeling of great joy"}, {"term": "figurative", "definition": "(형) 문자 그대로가 아닌, 비유적인", "en": "(adj.) not literal"}, {"term": "fringe", "definition": "(명) (집단의) 가장자리; 문자 그대로는 커튼이나 옷에 늘어진 실로 만든 장식 가장자리", "en": "(n.) the extreme edge (of a group), literally a decorative edge of loose threads on curtains, clothes"}, {"term": "heed", "definition": "(동) 세심히 주의를 기울이다; 지침으로 삼다; (명) 세심한 주의나 고려", "en": "(v) to pay careful attention to, notice; to be guided by; (n) close attention or consideration"}, {"term": "parody", "definition": "(명) 풍자적인 모방", "en": "(n.) a satirical imitation"}, {"term": "paucity", "definition": "(명) 적은 양; 희소함 또는 부족", "en": "(n.) small in quantity; scarcity or lack"}, {"term": "pervasive", "definition": "(형) 전체에 널리 퍼지는 경향이 있는", "en": "(adj.) having the tendency to spread throughout"}, {"term": "relentless", "definition": "(형) 끈질긴, 굴하지 않는", "en": "(adj.) persistent, unyielding"}, {"term": "sacrosanct", "definition": "(형) 신성한, 비판해서는 안 되는", "en": "(adj.) holy, something that should not be criticized"}, {"term": "stagnation", "definition": "(명) 움직임이 없음; 정체", "en": "(adj.) motionlessness; inactivity"}, {"term": "superfluous", "definition": "(형) 지나친; 불필요한, 쓸데없는 (-)", "en": "(adj.) excessive, over-the-top; unnecessary, needless (-)"}, {"term": "sustenance", "definition": "(명) 영양분을 제공하는 것; 살기 위해 필요한 음식", "en": "(n.) something that provides nourishment; food needed to live"}], "19": [{"term": "accumulate", "definition": "(동) 쌓다, 모으다", "en": "(v.) to pile up or collect"}, {"term": "allusion", "definition": "(명) 직접적 또는 간접적인 언급", "en": "(n.) a direct or indirect reference"}, {"term": "aloof", "definition": "(형) 쌀쌀맞은, 거리를 두는", "en": "(adj.) reserved, distant"}, {"term": "anomaly", "definition": "(명) 패턴에 맞지 않는 것", "en": "(n.) something that does not fit in a pattern"}, {"term": "arcane", "definition": "(형) 소수만 이해하는; 신비한", "en": "(adj.) understood by only a few; mysterious"}, {"term": "aversion", "definition": "(명) 어떤 것에 대한 특별한 반감", "en": "(n.) a particular dislike for something"}, {"term": "concession", "definition": "(명) 보통 요구에 응하여 내어주는 것; 정부가 부여하는 권리", "en": "(n.) something that is given (usually in response to a demand); a right granted by a government"}, {"term": "contingent", "definition": "(형) 특정한 다른 조건이 충족될 때만 발생하거나 존재하는; ~에 달린", "en": "(adj.) occurring or existing only if certain other conditions are met; dependent on"}, {"term": "cope", "definition": "(동) 대처하다", "en": "(v.) to deal with"}, {"term": "earnest", "definition": "(형) 진지하고 진실한", "en": "(adj.) honest and sincere"}, {"term": "euphemism", "definition": "(명) 불쾌한 것을 완곡하게 표현한 말", "en": "(n.) a polite phrase for something unpleasant"}, {"term": "fluctuate", "definition": "(동) 오르내리다; 불규칙하게 변하다", "en": "(v.) to rise and fall; to vary irregularly"}, {"term": "grievance", "definition": "(명) 불만의 원인 또는 불평", "en": "(n.) an aggravation or complaint"}, {"term": "indignation", "definition": "(명) 부당하거나 불공정한 일에서 비롯된 분노", "en": "(n.) anger sparked by something unjust or unfair"}, {"term": "insatiable", "definition": "(형) 아무리 해도 충족되거나 만족되지 않는", "en": "(adj.) impossible to satiate or satisfy"}, {"term": "intrigue", "definition": "(동) 누군가를 매혹시키거나 관심을 갖게 만들다; (명) 교활하거나 불법적인 일을 하기 위한 복잡한 비밀 계획", "en": "(v.) to make someone fascinated or interested; (n.) a complicated secret plan to do something sneaky or illegal"}, {"term": "modify", "definition": "(동) 일반적으로 개선하거나 덜 극단적으로 만들기 위해 (무언가)에 부분적 또는 사소한 변경을 가하다", "en": "(v.) to make partial or minor changes to (something), typically so as to improve it or to make it less extreme"}, {"term": "moot", "definition": "(형) 실제적인 이유로는 관련이 없거나 논할 필요가 없는", "en": "(adj.) irrelevant, not debatable for any practical reason"}, {"term": "mundane", "definition": "(형) 평범한 일상사와 관련된", "en": "(adj.) of or relating to ordinary, everyday matters"}, {"term": "panacea", "definition": "(명) 만병통치약", "en": "(n.) a cure-all"}, {"term": "pulpit", "definition": "(명) 설교에 사용되는 연단", "en": "(n.) a podium used for preaching"}, {"term": "reproach", "definition": "(동) 꾸짖다, 못마땅해하다", "en": "(v.) to scold, disapprove"}, {"term": "resourceful", "definition": "(형) 온갖 문제를 신속하고 효과적으로 처리할 수 있는; 헤쳐 나갈 방법을 잘 찾아내는", "en": "(adj.) able to deal promptly and effectively with all sorts of problems; clever in finding ways and means of getting along"}, {"term": "substantive", "definition": "(형) 내용이 충실하고 생각을 자극하는 (+)", "en": "(adj.) having substance and prompting thought (+)"}, {"term": "sullen", "definition": "(형) 분노나 원한 때문에 말없이 침울한", "en": "(adj.) silent and gloomy because of anger or resentment"}], "20": [{"term": "abruptly", "definition": "(부) 갑자기, 예고 없이", "en": "(adv.) suddenly, without notice"}, {"term": "accord", "definition": "(명) 합의 또는 조화; 공식적인 협정", "en": "(n.) a feeling of agreement or harmony; a formal agreement"}, {"term": "ambiguous", "definition": "(형) 불확실한, 여러 가지로 해석될 수 있는", "en": "(adj.) uncertain, variably interpretable"}, {"term": "ardent", "definition": "(형) 매우 열망하는; 열정적인", "en": "(adj.) intensely eager; passionate"}, {"term": "austerity", "definition": "(명) 태도나 생활 방식의 엄격함; 검소한 생활 방식", "en": "(n.) sternness and strictness of attitude or lifestyle; simplicity of lifestyle"}, {"term": "censure", "definition": "1. (명) 가혹한 비판; 2. (동) 공식적으로 책망하다", "en": "1. (n.) harsh criticism, 2. (v.) to rebuke formally"}, {"term": "coin", "definition": "(동) 새로운 단어나 구를 고안하다", "en": "(v.) to devise a new word or phrase"}, {"term": "confer", "definition": "(동) 부여하거나 수여하다; 협의하다", "en": "(v.) to grant or bestow; to consult"}, {"term": "demise", "definition": "(명) 존재나 활동의 끝; 죽음", "en": "(n.) the end of existence or activity; death"}, {"term": "disparate", "definition": "(형) 현저히 다른, 크게 대조되는 요소를 포함한", "en": "(adj.) sharply differing, containing sharply contrasting elements"}, {"term": "eccentric", "definition": "(형) 통상적이거나 정상적인 행동에서 벗어난; 별난; (명) 별나게 행동하는 사람", "en": "(adj.) departing from accepted or normal behavior; odd. (n.) one who behaves in an odd or peculiar way"}, {"term": "futile", "definition": "(형) 성공하지 못하거나 아무 결과가 없는; 쓸모없는; 중요하지 않은, 하찮은", "en": "(adj.) not successful, failing to have any result; useless; unimportant, frivolous"}, {"term": "impetus", "definition": "(명) 원동력; 행동을 일으키는 모든 것", "en": "(n.) a driving force; anything that causes an action"}, {"term": "implication", "definition": "(명) 암시되거나 내포된 것; 파급 결과", "en": "(n.) something implied or suggested; ramification"}, {"term": "incessant", "definition": "(형) 끊임없는; 끝없는 (-)", "en": "(adj.) unceasing; never-ending (-)"}, {"term": "inclination", "definition": "(명) 경향, 성향", "en": "(n.) a tendency, propensity"}, {"term": "inexplicable", "definition": "(형) 설명하기 어렵거나 이해할 수 없는", "en": "(adj.) hard to explain or impossible to understand"}, {"term": "inherent", "definition": "(형) 어떤 것의 자연스러운 일부로 존재하는, 본래부터 지닌", "en": "(adj.) existing as a natural part of something"}, {"term": "lattice", "definition": "(명) 종종 덩굴식물에 사용되는 십자형 또는 다이아몬드 격자", "en": "(n.) a crisscross or diamond grid, often for climbing plants"}, {"term": "maneuver", "definition": "(명) 계획된 움직임; 능숙한 계획; 책략; (동) 그러한 계획된 움직임을 실행하다", "en": "(n.) a planned movement; a skillful plan; a scheme; (v.) to perform or carry out such a planned movement"}, {"term": "pedigree", "definition": "(명) (명문가 등의) 혈통 기록; 우수성을 보여 주는 배경", "en": "(n.) ancestry record (for elites), one's background (showing quality)"}, {"term": "peril", "definition": "(명) 심각하고 임박한 위험", "en": "(n.) serious and immediate danger"}, {"term": "proprietor", "definition": "(명) 상점이나 기타 사업체의 소유자", "en": "(n.) an owner of a store or other business"}, {"term": "secular", "definition": "(형) 세속적인; 교회나 종교와 관련이 없음", "en": "(adj.) worldly; not connected with a church or religion"}, {"term": "unassuming", "definition": "(형) 거만하거나 뽐내지 않는, 꾸밈없는; 겸손한", "en": "(adj.) not arrogant, not putting on airs, unpretentious; modest"}], "21": [{"term": "aboard", "definition": "(형) 배나 보트에 탄, 배나 보트 안으로 또는 안에", "en": "(adj.) on board, into or within a ship or boat"}, {"term": "apathetic", "definition": "(형) 관심이나 감정이 없는", "en": "(adj.) lacking concern, emotion"}, {"term": "apex", "definition": "(명) 어떤 것의 가장 높은 지점", "en": "(n.) the highest point of something"}, {"term": "apprehensive", "definition": "(형) 나쁜 일이 일어날까 걱정하거나 두려워하는", "en": "(adj.) worried, afraid something bad will happen"}, {"term": "calamity", "definition": "(명) 재난", "en": "(n.) a disaster"}, {"term": "chagrin", "definition": "(명) 당혹감, 분함", "en": "(n.) embarrassment"}, {"term": "culprit", "definition": "(명) 죄를 저지른 사람 (-)", "en": "(n.) a guilty person (-)"}, {"term": "curt", "definition": "(형) 퉁명스럽고 무례할 만큼 짧은", "en": "(adj.) abruptly and rudely short"}, {"term": "deplore", "definition": "(동) 슬픔, 불만을 느끼거나 표현하다", "en": "(v.) to feel or express sorrow, disapproval"}, {"term": "disparage", "definition": "(동) 비판하거나 나쁘게 말하다", "en": "(v.) to criticize or speak ill of"}, {"term": "dogged", "definition": "(형) 완고하게 굴하지 않는; 매우 끈질긴", "en": "(adj.) stubbornly unyielding; very persistent"}, {"term": "exasperation", "definition": "(명) 매우 짜증 나거나 화가 난 감정", "en": "(n.) a strong feeling of annoyance or irritation"}, {"term": "idyllic", "definition": "(형) 행복한, 평화로운, 그림 같은", "en": "(adj.) happy, peaceful, picturesque"}, {"term": "indifference", "definition": "(명) 흥미나 관심이 없음", "en": "(n.) a lack of interest or concern"}, {"term": "indulgent", "definition": "(형) 지나치게 너그럽고 관대한, 충분히 엄격하지 않은", "en": "(adj.) too lenient, too generous, not strict enough"}, {"term": "inflammatory", "definition": "(형) 분노나 문제를 일으키는; 붓거나 쓰라리게 만드는", "en": "(adj.) causing anger or trouble / to make or become swollen or sore"}, {"term": "laudatory", "definition": "(형) 감탄이나 칭찬을 표현하는", "en": "(adj.) expressing admiration or praise"}, {"term": "ostensibly", "definition": "(부) 표면상으로는, 실제로는 아닐 수도 있지만 겉보기에는", "en": "(adv.) apparently, but perhaps not actually"}, {"term": "plight", "definition": "(명) 어려운 상황 (-)", "en": "(n.) a difficult situation (-)"}, {"term": "posterity", "definition": "(명) 한 사람의 후손; 미래 세대", "en": "(n.) a person's descendants; future generations"}, {"term": "predicament", "definition": "(명) 어려운 상황; 까다롭거나 위험한 상황; 딜레마", "en": "(n.) difficult situation; tricky or dangerous situation; dilemma"}, {"term": "rout", "definition": "(명) 패배; (동) 사람, 팀, 그룹을 이기거나 정복하다", "en": "(n.) a defeat; (v.) to beat or conquer a person, team, or group"}, {"term": "setback", "definition": "(명) 진행을 방해하는 것; 실망, 예상 밖의 손실 또는 패배; 벽에서 계단처럼 뒤로 들어간 부분", "en": "(n.) something that interferes with progress; a disappointment, unexpected loss or defeat; a steplike recession in a wall"}, {"term": "singular", "definition": "(형) 1. 둘 이상과 대비되는 한 사람이나 한 사물을 나타내는; 2. 비범한, 뛰어난; 3. 이상하거나 특이한", "en": "(adj.) 1. denoting a single person or thing, contrasting to more than one. 2. extraordinary; exceptional. 3. strange or unusual"}, {"term": "temperance", "definition": "(명) 행동이나 생각의 절제", "en": "(n.) moderation in action or thought"}], "22": [{"term": "aggregate", "definition": "1. (명) 전체 또는 총합; 2. (동) 한데 모으다", "en": "1. (n.) a whole or total, 2. (v.) to gather into a mass"}, {"term": "agitate", "definition": "(동) 동요시키거나 화나게 하다", "en": "(v.) to disturb or upset"}, {"term": "artifice", "definition": "(명) 누군가를 속이기 위해 만든 영리한 술책이나 장치", "en": "(n.) a clever move or device made to trick someone"}, {"term": "august", "definition": "(형) 인상적인; 장엄한 (+)", "en": "(adj.) impressive; majestic (+)"}, {"term": "compel", "definition": "(동) 누군가가 행동하거나 어떤 일이 이루어지도록 강요하다", "en": "(v.) to force someone to act or something to be done"}, {"term": "defer", "definition": "(동) 어떤 일을 미루다; 다른 사람의 지혜를 따르다", "en": "(v.) to postpone something; to yield to another's wisdom"}, {"term": "detrimental", "definition": "(형) 해로운", "en": "(adj.) harmful"}, {"term": "edifice", "definition": "(명) 건물", "en": "(n.) a building"}, {"term": "fauna", "definition": "(명) 특정 지역이나 시대의 동물을 전체로 본 것", "en": "(n.) animals of a region or period, considered as a whole"}, {"term": "hover", "definition": "(동) 위에 떠 있거나 매달린 채 머물다; 위나 주변을 불확실하게 오가다", "en": "(v.) to float or hang suspended over; to move back and forth uncertainly over or around"}, {"term": "imminent", "definition": "(형) 곧 일어날, 임박한", "en": "(adj.) about to happen; impending"}, {"term": "jargon", "definition": "(명) 특정 분야의 전문가만 이해하는 전문 용어", "en": "(n.) language that only experts in a particular field understand"}, {"term": "mediocre", "definition": "(형) 평균적인, 평범한, 두드러지지 않는 (-)", "en": "(adj.) average, ordinary, undistinguished (-)"}, {"term": "palpable", "definition": "(형) 만지거나 느끼거나 인지할 수 있는", "en": "(adj.) capable of being touched, felt, or perceived"}, {"term": "perennial", "definition": "1. (형) 무기한 지속되거나 되풀이되는; 2. (명) 3년 이상 사는 식물", "en": "1. (adj.) lasting indefinitely or recurring. 2. (n.) a plant that lives three or more years"}, {"term": "perverse", "definition": "(형) 예상되는 것에 반대로 나가려는; 완고한; 선하고 올바른 것에서 벗어난", "en": "(adj.) inclined to go against what is expected; stubborn; turned away from what is good and proper"}, {"term": "placate", "definition": "(동) 분노를 완화하다, 달래다", "en": "(v.) to ease the anger of, soothe"}, {"term": "prolific", "definition": "(형) 많은 것을 생산하는, 다작의", "en": "(adj.) producing a lot"}, {"term": "prudent", "definition": "(형) 매우 신중한; 판단력과 지혜를 보이는", "en": "(adj.) very careful; showing judgment and wisdom"}, {"term": "radical", "definition": "(형) 주류 견해와 극단적으로 다른; (명) 전면적인 사회·정치 개혁을 지지하는 사람", "en": "(adj.) extremely different from mainstream views; (n.) person who supports complete social or political reform"}, {"term": "ruse", "definition": "(명) 기만 행위, 속임수", "en": "(n.) an act of deception, subterfuge"}, {"term": "static", "definition": "(형) 변화가 거의 없거나 전혀 없는", "en": "(adj.) showing little or no change"}, {"term": "succinct", "definition": "(형) 적은 말로 명확히 표현된; 간결한; 함축적인", "en": "(adj.) expressed clearly and in few words; concise; pithy"}, {"term": "utilitarian", "definition": "(형) 유용성과 관련되거나 이를 목표로 하는", "en": "(adj.) relating to or aiming at usefulness"}, {"term": "vie", "definition": "(동) 무엇인가를 두고 경쟁하다", "en": "(v.) to compete for something"}], "23": [{"term": "accelerate", "definition": "(동) 속도나 성장을 증가시키다", "en": "(v.) to increase speed or growth"}, {"term": "atypical", "definition": "(형) 일반적이지 않은, 특이한", "en": "(adj.) not typical, unusual"}, {"term": "aura", "definition": "(명) 사람이나 사물을 둘러싸고 있는 것처럼 보이는 빛이나 분위기", "en": "(n.) a glow or atmosphere that seems to surround a person or thing"}, {"term": "belligerent", "definition": "(형) 호전적인; 공격적인; 전투적인 (-)", "en": "(adj.) warlike; aggressive; combative (-)"}, {"term": "bliss", "definition": "(명) 극도의 행복", "en": "(n.) extreme happiness"}, {"term": "cognition", "definition": "(명) 정신적 과정, 사고", "en": "(n.) mental processes, thinking"}, {"term": "diminish", "definition": "(동) 더 작아지거나 작게 만들다, 크기를 줄이다", "en": "(v.) to make or become smaller, reduce in size"}, {"term": "engender", "definition": "(동) ~을 일으키다, 창조하다, 생성하다", "en": "(v.) to bring about, create, generate"}, {"term": "feasible", "definition": "(형) 실행할 수 있는; 가능하거나 실현될 법한", "en": "(adj.) able to be done; possible or likely"}, {"term": "frivolous", "definition": "(형) 중요하지 않은, 하찮은", "en": "(adj.) of little importance, trifling"}, {"term": "inalienable", "definition": "(형) 소유자에게서 빼앗을 수 없는", "en": "(adj.) unable to be taken away from a possessor"}, {"term": "indicative", "definition": "(형) 가리키거나 분명히 드러내는(\"of\"가 뒤에 옴)", "en": "(adj.) pointing out or clearly revealing (followed by \"of\")"}, {"term": "intermittent", "definition": "(형) 연속적이거나 규칙적이지 않음; 불규칙한 간격으로 일어나는", "en": "(adj.) not continuous or regular; happening at irregular intervals"}, {"term": "liberal", "definition": "(형) 새로운 것이나 생각에 열린; 매우 관대한", "en": "(adj.) open to new things and ideas; adj. very generous"}, {"term": "loom", "definition": "(동) 위에 어렴풋이 나타나거나 곧 닥칠 듯하다", "en": "(v.) to hang over or be impending"}, {"term": "muse", "definition": "(동) 어떤 주제에 대해 깊이 생각하다; (명) 시인이나 예술가의 영감", "en": "(v.) to think deeply on a subject; (n.) a poet or artist's inspiration"}, {"term": "procure", "definition": "(동) 얻다, 획득하다", "en": "(v.) to obtain, acquire"}, {"term": "raucous", "definition": "(형) 시끄러운, 소란스러운", "en": "(adj.) loud, boisterous"}, {"term": "render", "definition": "(동) 전달하다, 제공하다, 표현하다; ~한 상태가 되게 하다", "en": "(v.) to deliver, provide, represent; to cause to become"}, {"term": "reprimand", "definition": "(동) 공식적으로 또는 심하게 비난하거나 꾸짖다", "en": "(v.) to criticize or scold formally or severely"}, {"term": "repudiate", "definition": "(동) 사실이 아니거나 근거가 없거나 부당하다고 거부하다", "en": "(v.) reject as untrue, unfounded, or unjust"}, {"term": "shrewd", "definition": "(형) 영리한; 기민한", "en": "(adj.) clever; astute"}, {"term": "tangible", "definition": "1. (형) 실제의; 만질 수 있는; 2. (형) 이해하거나 실감할 수 있는; 모호하거나 불확실하지 않은", "en": "(adj.)1. real; able to be touched. adj2. possible to understand or realize; not vague or uncertain"}, {"term": "temperate", "definition": "(형) 온화한, 적당한, 절제된", "en": "(adj.) mild, moderate, restrained"}, {"term": "wry", "definition": "(형) 냉소적이거나 조롱하는 유머가 있는; 나쁜 상황이나 변화에 살짝 재미있어 하는 듯한", "en": "(adj.) dry or mocking humor; showing slight amusement about a bad situation or change"}], "24": [{"term": "accommodate", "definition": "(동) 요청을 들어주거나 필요를 충족하다", "en": "(v.) to fulfill a request or meet the needs of"}, {"term": "assail", "definition": "(동) 공격하다", "en": "(v.) to attack"}, {"term": "bluster", "definition": "(명) 허세를 부리며 용감한 척함 (-)", "en": "(n.) a swaggering show of courage (-)"}, {"term": "compatible", "definition": "(형) 서로 잘 어울리거나 충돌 없이 공존할 수 있는", "en": "(adj.) able to get along with together or exist without conflict"}, {"term": "confidant", "definition": "(명) 비밀을 털어놓을 수 있는 사람", "en": "(n.) a person entrusted with secrets"}, {"term": "contemplate", "definition": "(동) 신중하게 생각하다; 숙고하다", "en": "(v.) to give careful thought to; to ponder"}, {"term": "contentious", "definition": "(형) 다투기 좋아하는; 논쟁적인; 논쟁을 일으키기 쉬운", "en": "(adj.) quarrelsome; controversial; likely to cause arguments"}, {"term": "dialect", "definition": "(명) 한 언어의 방언", "en": "(n.) a variation of a language"}, {"term": "facetious", "definition": "(형) 장난스럽거나 상황에 맞지 않게 익살스러운", "en": "(adj.) playfully or inappropriately humorous"}, {"term": "fervent", "definition": "(형) 열렬한, 열정적인", "en": "(adj.) ardent, passionate"}, {"term": "flippant", "definition": "(형) 마땅히 갖춰야 할 진지함이 부족한 (-)", "en": "(adj.) lacking proper seriousness (-)"}, {"term": "graphic", "definition": "(형) 생생한, 사실적인; 회화 예술과 관련된", "en": "(adj.) lifelike, vivid; relating to the pictorial arts"}, {"term": "impoverished", "definition": "(형) 가난한, 빈곤한; 고갈된", "en": "(adj.) poor, in a state of poverty; depleted"}, {"term": "inquisitive", "definition": "(형) 호기심이 많고 지식을 열망하는", "en": "(adj.) curious, eager for knowledge"}, {"term": "materialistic", "definition": "(형) 물질적인 것에 몰두하는; 소유물을 탐내는", "en": "(adj.) preoccupied with material things; greedy for possessions"}, {"term": "monotonous", "definition": "(형) 따분하고 지루하며 반복적인; 다양성과 흥미가 부족한", "en": "(adj.) dull, tedious, and repetitious; lacking in variety and interest"}, {"term": "mystical", "definition": "(형) 초자연적인; 신비한; 수수께끼 같은", "en": "(adj.) otherworldly; mysterious; enigmatic"}, {"term": "obdurate", "definition": "(형) 완고한; 융통성이 없는 (-)", "en": "(adj.) stubborn; inflexible (-)"}, {"term": "proclaim", "definition": "(동) 공개적으로 또는 공식적으로 선언하다", "en": "(v.) to declare publicly or officially"}, {"term": "prosperous", "definition": "(형) 부유하고 성공한", "en": "(adj.) rich and successful"}, {"term": "revere", "definition": "(동) 크게 존경하고 사랑하다", "en": "(v.) to have great respect and affection for"}, {"term": "sneer", "definition": "(동) 조롱하듯 말하거나 비웃는 표정을 짓다; (명) 불친절하게 흘겨보는 표정", "en": "(v.) to speak or smirk at in a mocking way; (n.) an unkind glare"}, {"term": "unequivocal", "definition": "(형) 오해의 여지를 남기지 않음; 모호하지 않은", "en": "(adj.) leaving no room for misunderstanding; unambiguous"}, {"term": "unwitting", "definition": "(형) 알지 못하는; 의도하지 않은", "en": "(adj.) not aware or knowing; unintentional"}, {"term": "wistful", "definition": "(형) 그리움에 찬; 생각에 잠겨 슬픈", "en": "(adj.) full of yearning; musingly sad"}]}; const INITIAL_SET = 1; 
+const byId = id => document.getElementById(id);
+const allSets = Object.keys(DATA).map(Number);
+const ALL_SET = 'all';
+const setSequence = [...allSets, ALL_SET];
+const hashMatch = (location.hash.match(/set-(all|\d+)/) || [])[1];
+const hashSet = hashMatch === ALL_SET ? ALL_SET : Number(hashMatch);
+const setLabel = id => id === ALL_SET ? '전체 단어' : `Set ${id}`;
+const state = {
+  set: (hashSet === ALL_SET || DATA[hashSet]) ? hashSet : INITIAL_SET,
+  index: 0, flipped: false, order: [], tab: 'learn',
+  course: { status: 'setup', planIndex: 0, queue: [], options: [], answered: false, selected: '', correct: false, hintShown: false, missed: {} },
+  learn: { direction: 'definition-to-word', forceType: 'auto', current: null, type: 'choice', options: [], answered: false, chosen: '', correct: false, lastTerm: '', streak: 0, attempts: 0 },
+  test: { status: 'setup', from: allSets[0], to: allSets[allSets.length - 1], direction: 'definition-to-word', format: 'choice', count: '20', questions: [], groups: [], matchSelections: [], index: 0, selected: '', answers: [] },
+  wrongReview: { status: 'setup', from: allSets[0], to: allSets[allSets.length - 1], minimum: 1, direction: 'definition-to-word', questions: [], nextRound: [], round: 1, totalItems: 0, index: 0, selected: '', answered: false, correct: false, answers: [] }
+};
+
+const DIRECTIONS = {
+  'definition-to-word': { prompt: 'definition', answer: 'term', short: '단어 고르기', title: '뜻을 보고 단어 고르기', hint: '한글 뜻을 읽고 알맞은 영단어를 선택합니다.' },
+  'word-to-definition': { prompt: 'term', answer: 'definition', short: '뜻 고르기', title: '단어를 보고 뜻 고르기', hint: '영단어를 보고 알맞은 한글 뜻을 선택합니다.' },
+  'en-to-word': { prompt: 'en', answer: 'term', short: '단어 고르기', title: '영영 뜻을 보고 단어 고르기', hint: '영어 정의를 읽고 알맞은 영단어를 선택합니다.' },
+  'word-to-en': { prompt: 'term', answer: 'en', short: '영영 고르기', title: '단어를 보고 영영 뜻 고르기', hint: '영단어를 보고 알맞은 영어 정의를 선택합니다.' }
+};
+const DEFAULT_DIRECTION = 'definition-to-word';
+function directionInfo(direction) { return DIRECTIONS[direction] || DIRECTIONS[DEFAULT_DIRECTION]; }
+function promptFor(item, direction) { return item[directionInfo(direction).prompt] || item.definition; }
+function answerFor(item, direction) { return item[directionInfo(direction).answer] || item.term; }
+function answersWithTerm(direction) { return directionInfo(direction).answer === 'term'; }
+function directionOptionsHtml(name, selected, keys = ['definition-to-word', 'word-to-definition']) {
+  return keys.map(value => [value, DIRECTIONS[value]]).map(([value, info]) =>
+    `<label class="direction-option"><input type="radio" name="${name}" value="${value}" ${selected===value?'checked':''}><span><strong>${info.title}</strong><small>${info.hint}</small></span></label>`
+  ).join('');
+}
+const TEST_FORMATS = {
+  choice: { title: '객관식', hint: '보기 4개 중에서 정답을 고릅니다.' },
+  match: { title: '매칭형', hint: '단어 번호 옆에 알맞은 뜻의 알파벳을 직접 적어 짝짓기 합니다.' }
+};
+function matchLetter(index) {
+  let n = index, s = '';
+  do { s = String.fromCharCode(97 + (n % 26)) + s; n = Math.floor(n / 26) - 1; } while (n >= 0);
+  return s;
+}
+let matchFocusRow = null;
+function formatOptionsHtml(name, selected) {
+  return Object.entries(TEST_FORMATS).map(([value, info]) =>
+    `<label class="direction-option"><input type="radio" name="${name}" value="${value}" ${selected===value?'checked':''}><span><strong>${info.title}</strong><small>${info.hint}</small></span></label>`
+  ).join('');
+}
+
+function escapeText(value) {
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+function shuffleArray(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+function selectedItems() { return state.set === ALL_SET ? allSets.flatMap(n => DATA[n]) : (DATA[state.set] || []); }
+function currentItem() { return selectedItems()[state.order[state.index]]; }
+function progressKey() { return `setb-known-${state.set}`; }
+function learnKey() { return `setb-learn-v2-${state.learn.direction}-${state.set}`; }
+function wrongCountsKey() { return 'setb-wrong-counts-v1'; }
+function wrongTermsKey() { return 'setb-wrong-terms-v1'; }
+function knownTerms() { return new Set(JSON.parse(localStorage.getItem(progressKey()) || '[]')); }
+function saveKnown(terms) { localStorage.setItem(progressKey(), JSON.stringify([...terms])); }
+function setOrder() { state.order = selectedItems().map((_, i) => i); state.index = 0; state.flipped = false; }
+function loadWrongCounts() {
+  try { return JSON.parse(localStorage.getItem(wrongCountsKey()) || '{}'); }
+  catch (_) { return {}; }
+}
+function wrongCount(setNumber) { return Number(loadWrongCounts()[setNumber]) || 0; }
+function loadWrongTerms() {
+  try { return JSON.parse(localStorage.getItem(wrongTermsKey()) || '{}'); }
+  catch (_) { return {}; }
+}
+function wrongTermCount(setNumber, term) {
+  const terms = loadWrongTerms();
+  if (setNumber === ALL_SET) return setSequence.reduce((sum, n) => sum + (Number(terms[n]?.[term]) || 0), 0);
+  return Number(terms[setNumber]?.[term]) || 0;
+}
+function recordWrong(setNumber, term) {
+  const counts = loadWrongCounts();
+  counts[setNumber] = (Number(counts[setNumber]) || 0) + 1;
+  localStorage.setItem(wrongCountsKey(), JSON.stringify(counts));
+  const terms = loadWrongTerms();
+  if (!terms[setNumber]) terms[setNumber] = {};
+  terms[setNumber][term] = (Number(terms[setNumber][term]) || 0) + 1;
+  localStorage.setItem(wrongTermsKey(), JSON.stringify(terms));
+  renderSetButtons(); renderSelector(); renderWrongSummary();
+}
+function resetWrongCount() {
+  if (!confirm(`${setLabel(state.set)}의 누적 오답 횟수를 초기화할까요?`)) return;
+  const counts = loadWrongCounts();
+  delete counts[state.set];
+  localStorage.setItem(wrongCountsKey(), JSON.stringify(counts));
+  const terms = loadWrongTerms();
+  delete terms[state.set];
+  localStorage.setItem(wrongTermsKey(), JSON.stringify(terms));
+  renderSetButtons(); renderSelector(); renderWrongSummary();
+  renderList();
+}
+function exportStudyData() {
+  const storage = {};
+  for (let index = 0; index < localStorage.length; index++) {
+    const key = localStorage.key(index);
+    if (key && key.startsWith('setb-')) storage[key] = localStorage.getItem(key);
+  }
+  const payload = {
+    app: 'Set B Vocabulary',
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    storage
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `SetB_vocabulary_backup_${new Date().toISOString().slice(0,10)}.json`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(link.href), 0);
+}
+async function importStudyData(event) {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  try {
+    const payload = JSON.parse(await file.text());
+    const entries = Object.entries(payload?.storage || {}).filter(([key, value]) => key.startsWith('setb-') && typeof value === 'string');
+    if (!entries.length) throw new Error('올바른 학습 데이터가 없습니다.');
+    if (!confirm(`${entries.length}개의 학습 데이터 항목을 가져올까요? 현재 이 파일의 기록은 백업 데이터로 교체됩니다.`)) return;
+    const currentKeys = [];
+    for (let index = 0; index < localStorage.length; index++) {
+      const key = localStorage.key(index);
+      if (key && key.startsWith('setb-')) currentKeys.push(key);
+    }
+    currentKeys.forEach(key => localStorage.removeItem(key));
+    entries.forEach(([key, value]) => localStorage.setItem(key, value));
+    alert('학습 데이터를 가져왔습니다. 페이지를 새로고침합니다.');
+    location.reload();
+  } catch (error) {
+    alert(`가져오기에 실패했습니다: ${error.message}`);
+  } finally {
+    event.target.value = '';
+  }
+}
+function loadLearnProgress() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(learnKey()) || '{}'); } catch (_) {}
+  const progress = {};
+  selectedItems().forEach(item => {
+    const old = saved[item.term] || {};
+    progress[item.term] = {
+      level: Math.max(0, Math.min(2, Number(old.level) || 0)),
+      correct: Number(old.correct) || 0,
+      wrong: Number(old.wrong) || 0
+    };
+  });
+  return progress;
+}
+function saveLearnProgress(progress) { localStorage.setItem(learnKey(), JSON.stringify(progress)); }
+function learnSummary(progress = loadLearnProgress()) {
+  const levels = selectedItems().map(item => progress[item.term].level);
+  return {
+    fresh: levels.filter(level => level === 0).length,
+    learning: levels.filter(level => level === 1).length,
+    mastered: levels.filter(level => level === 2).length,
+    percent: Math.round(levels.reduce((sum, level) => sum + level, 0) / (levels.length * 2) * 100)
+  };
+}
+
+function renderSetButtons() {
+  const wrap = byId('set-grid');
+  wrap.innerHTML = allSets.map(n => `<button class="set-button ${n===state.set?'active':''}" data-set="${n}">S${n}${wrongCount(n) ? `<small>오답 ${wrongCount(n)}</small>` : ''}</button>`).join('')
+    + `<button class="set-button ${state.set===ALL_SET?'active':''}" data-set="${ALL_SET}">All${wrongCount(ALL_SET) ? `<small>오답 ${wrongCount(ALL_SET)}</small>` : ''}</button>`;
+  wrap.querySelectorAll('button').forEach(button => button.onclick = () => chooseSet(button.dataset.set === ALL_SET ? ALL_SET : Number(button.dataset.set)));
+}
+function renderSelector() {
+  const totalWords = allSets.reduce((sum, n) => sum + DATA[n].length, 0);
+  byId('set-select').innerHTML = allSets.map(n => `<option value="${n}" ${n===state.set?'selected':''}>Set ${n} · ${DATA[n].length} words · 오답 ${wrongCount(n)}</option>`).join('')
+    + `<option value="${ALL_SET}" ${state.set===ALL_SET?'selected':''}>전체 단어 · ${totalWords} words · 오답 ${wrongCount(ALL_SET)}</option>`;
+}
+function renderWrongSummary() {
+  byId('wrong-set-label').textContent = `${setLabel(state.set)} 누적 오답`;
+  byId('wrong-total').textContent = `${wrongCount(state.set)}회`;
+}
+function renderHeader() {
+  byId('set-title').textContent = setLabel(state.set);
+  byId('set-note').textContent = '네 방향을 각각 학습하고 숙련도를 따로 쌓을 수 있습니다.';
+}
+
+function setLearnDirection(direction) {
+  if (!DIRECTIONS[direction]) return;
+  state.learn.direction = direction;
+  state.learn.current = null;
+  state.learn.lastTerm = '';
+  state.learn.answered = false;
+  renderLearn();
+}
+function setLearnForceType(type) {
+  if (!['auto', 'choice', 'write'].includes(type)) return;
+  state.learn.forceType = type;
+  state.learn.current = null;
+  state.learn.lastTerm = '';
+  state.learn.answered = false;
+  renderLearn();
+}
+
+function createLearnQuestion() {
+  const progress = loadLearnProgress();
+  const candidates = selectedItems().filter(item => progress[item.term].level < 2);
+  if (!candidates.length) { state.learn.current = null; return; }
+  let weighted = [];
+  candidates.forEach(item => {
+    const record = progress[item.term];
+    const weight = Math.max(1, 4 - record.level + Math.min(record.wrong, 3));
+    for (let i = 0; i < weight; i++) weighted.push(item);
+  });
+  if (candidates.length > 1) weighted = weighted.filter(item => item.term !== state.learn.lastTerm);
+  const item = weighted[Math.floor(Math.random() * weighted.length)] || candidates[0];
+  const level = progress[item.term].level;
+  const direction = state.learn.direction;
+  const typable = answersWithTerm(direction);
+  const forceType = typable ? state.learn.forceType : 'auto';
+  state.learn.current = item;
+  state.learn.type = !typable ? 'choice' : forceType === 'auto' ? (level === 0 ? 'choice' : 'write') : forceType;
+  state.learn.options = state.learn.type === 'choice'
+    ? shuffleArray([item, ...shuffleArray(selectedItems().filter(other => other.term !== item.term)).slice(0, 3)]).map(option => answerFor(option, direction))
+    : [];
+  state.learn.answered = false;
+  state.learn.chosen = '';
+  state.learn.correct = false;
+}
+function renderLearnStatus() {
+  const summary = learnSummary();
+  byId('mastery-bar').style.width = `${summary.percent}%`;
+  byId('fresh-count').textContent = summary.fresh;
+  byId('learning-count').textContent = summary.learning;
+  byId('mastered-count').textContent = summary.mastered;
+}
+function renderLearn() {
+  document.querySelectorAll('.learn-mode').forEach(button => button.classList.toggle('active', button.dataset.direction === state.learn.direction));
+  const typable = answersWithTerm(state.learn.direction);
+  document.querySelectorAll('#learn-type-switch button').forEach(button => {
+    button.classList.toggle('active', button.dataset.type === state.learn.forceType);
+    button.disabled = !typable;
+  });
+  renderLearnStatus();
+  const summary = learnSummary();
+  const stage = byId('learn-stage');
+  if (summary.mastered === selectedItems().length && !state.learn.current) {
+    stage.innerHTML = `<div class="complete"><div><div class="eyebrow">${setLabel(state.set)} complete</div><h3>모두 익혔어요!</h3><p>${selectedItems().length}개 단어를 두 단계 모두 통과했습니다.</p><button class="button" id="review-all">전체 복습 시작</button></div></div>`;
+    byId('review-all').onclick = reviewAll;
+    return;
+  }
+  if (!state.learn.current) createLearnQuestion();
+  const item = state.learn.current;
+  if (!item) return;
+  const isChoice = state.learn.type === 'choice';
+  const direction = state.learn.direction;
+  const prompt = promptFor(item, direction);
+  const correctAnswer = answerFor(item, direction);
+  const feedbackExtra = item.en;
+  const question = `
+    <div class="learn-card">
+      <div>
+        <div class="question-kicker">${directionInfo(direction).short} · ${isChoice ? '객관식 · 1–4 키로 선택' : '직접 입력 · 기억에서 꺼내기'}</div>
+        <div class="question-prompt">${escapeText(prompt)}</div>
+      </div>
+      <div>
+        ${isChoice ? `<div class="choices">${state.learn.options.map((option, optionIndex) => {
+          const className = state.learn.answered ? (option === correctAnswer ? 'correct' : (option === state.learn.chosen ? 'wrong' : '')) : '';
+          return `<button class="choice ${className}" data-answer="${escapeText(option)}" ${state.learn.answered?'disabled':''}><span class="choice-number">${optionIndex + 1}</span>${escapeText(option)}</button>`;
+        }).join('')}</div>` : `<form class="answer-form" id="answer-form"><input class="answer-input" id="answer-input" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="영단어를 입력하세요" value="${escapeText(state.learn.chosen)}" ${state.learn.answered?'disabled':''}><button class="button primary" type="submit" ${state.learn.answered?'disabled':''}>확인</button></form>`}
+        ${state.learn.answered ? `<div class="learn-feedback ${state.learn.correct?'good':'bad'}"><div><strong>${state.learn.correct?'정답입니다!':'다시 기억해 보세요.'}</strong>${state.learn.correct ? `${escapeText(item.term)} · ${escapeText(item.definition)}` : `정답은 <b>${escapeText(correctAnswer)}</b>입니다.`}${feedbackExtra ? `<span class="feedback-extra">${escapeText(feedbackExtra)}</span>` : ''}</div><button class="button primary" id="next-question">다음 문제 →</button></div>` : ''}
+      </div>
+    </div>
+    <div class="learn-utility"><button class="button" id="dont-know">${state.learn.answered?'진행 기록 초기화':'잘 모르겠어요'}</button><button class="button" id="learn-speak">◖) 정답 발음</button></div>`;
+  stage.innerHTML = question;
+  if (!state.learn.answered) {
+    stage.querySelectorAll('.choice').forEach(button => button.onclick = () => gradeLearn(button.dataset.answer));
+    const form = byId('answer-form');
+    if (form) {
+      form.onsubmit = event => { event.preventDefault(); gradeLearn(byId('answer-input').value); };
+      setTimeout(() => byId('answer-input')?.focus(), 0);
+    }
+    byId('dont-know').onclick = () => gradeLearn('');
+  } else {
+    byId('next-question').onclick = nextLearnQuestion;
+    byId('dont-know').onclick = resetLearnProgress;
+  }
+  byId('learn-speak').onclick = () => speak(item.term);
+}
+function normalizeAnswer(value) { return value.trim().toLowerCase(); }
+function gradeLearn(answer) {
+  if (state.learn.answered || !state.learn.current) return;
+  const item = state.learn.current;
+  const correctAnswer = answerFor(item, state.learn.direction);
+  const correct = normalizeAnswer(answer) === normalizeAnswer(correctAnswer);
+  const progress = loadLearnProgress();
+  const record = progress[item.term];
+  if (correct) {
+    record.level = Math.min(2, record.level + 1);
+    record.correct += 1;
+    state.learn.streak += 1;
+  } else {
+    record.level = Math.max(0, record.level - 1);
+    record.wrong += 1;
+    state.learn.streak = 0;
+    recordWrong(state.set, item.term);
+  }
+  saveLearnProgress(progress);
+  state.learn.attempts += 1;
+  state.learn.answered = true;
+  state.learn.chosen = answer;
+  state.learn.correct = correct;
+  renderLearn();
+}
+function nextLearnQuestion() {
+  state.learn.lastTerm = state.learn.current?.term || '';
+  state.learn.current = null;
+  renderLearn();
+}
+function resetLearnProgress() {
+  if (!confirm(`${setLabel(state.set)}의 학습 기록을 초기화할까요?`)) return;
+  localStorage.removeItem(learnKey());
+  state.learn.current = null;
+  state.learn.lastTerm = '';
+  state.learn.streak = 0;
+  renderLearn();
+}
+function reviewAll() {
+  const progress = loadLearnProgress();
+  Object.values(progress).forEach(record => record.level = 1);
+  saveLearnProgress(progress);
+  state.learn.current = null;
+  renderLearn();
+}
+
+function poolForRange(from, to) {
+  const fromIndex = allSets.indexOf(Number(from));
+  const toIndex = allSets.indexOf(Number(to));
+  const low = Math.min(fromIndex, toIndex), high = Math.max(fromIndex, toIndex);
+  return allSets.slice(low, high + 1).flatMap(setNumber => DATA[setNumber].map(item => ({ ...item, setNumber })));
+}
+function testPool() { return poolForRange(state.test.from, state.test.to); }
+function buildTestQuestions() {
+  const pool = testPool();
+  const requested = state.test.count === 'all' ? pool.length : Number(state.test.count);
+  const selected = shuffleArray(pool).slice(0, Math.min(requested, pool.length));
+  const direction = state.test.direction;
+  const base = selected.map(item => ({
+    setNumber: item.setNumber,
+    term: item.term,
+    prompt: promptFor(item, direction),
+    correct: answerFor(item, direction),
+    direction
+  }));
+  if (state.test.format === 'match') {
+    state.test.questions = base;
+    const indices = base.map((_, i) => i);
+    const texts = shuffleArray(indices.map(idx => base[idx].correct));
+    state.test.groups = [{ indices, options: texts.map((text, j) => ({ letter: matchLetter(j), text })) }];
+    state.test.matchSelections = new Array(indices.length).fill('');
+  } else {
+    state.test.groups = [];
+    state.test.questions = base.map((q, i) => {
+      const item = selected[i];
+      const possible = [...new Set(pool.filter(other => other.term !== item.term).map(other => answerFor(other, direction)))].filter(option => option !== q.correct);
+      return { ...q, options: shuffleArray([q.correct, ...shuffleArray(possible).slice(0, 3)]) };
+    });
+  }
+  state.test.status = 'running';
+  state.test.index = 0;
+  state.test.selected = '';
+  state.test.answers = [];
+  renderTest();
+}
+function startTest() {
+  state.test.from = Number(byId('test-from').value);
+  state.test.to = Number(byId('test-to').value);
+  if (allSets.indexOf(state.test.from) > allSets.indexOf(state.test.to)) {
+    [state.test.from, state.test.to] = [state.test.to, state.test.from];
+  }
+  state.test.count = byId('test-count').value;
+  state.test.format = document.querySelector('input[name="test-format"]:checked').value;
+  state.test.direction = document.querySelector('input[name="test-direction"]:checked').value;
+  buildTestQuestions();
+}
+function renderTestSetup() {
+  const setOptions = allSets.map(number => `<option value="${number}">Set ${number}</option>`).join('');
+  const directionKeys = state.test.format === 'match' ? ['word-to-definition', 'word-to-en'] : ['definition-to-word', 'word-to-definition'];
+  if (!directionKeys.includes(state.test.direction)) state.test.direction = directionKeys[0];
+  byId('test-stage').innerHTML = `
+    <div class="test-config">
+      <h3>테스트 만들기</h3>
+      <p>시험 범위와 문제 방향을 선택하세요. 정답은 시험을 마친 뒤 한꺼번에 확인합니다.</p>
+      <div class="test-grid">
+        <div class="test-field"><label class="label" for="test-from">시작 세트</label><select class="select" id="test-from">${setOptions}</select></div>
+        <div class="test-field"><label class="label" for="test-to">끝 세트</label><select class="select" id="test-to">${setOptions}</select></div>
+        <div class="test-field"><label class="label" for="test-count">문제 수</label><select class="select" id="test-count"><option value="10">10문제</option><option value="20">20문제</option><option value="30">30문제</option><option value="50">50문제</option><option value="all">범위 전체</option></select></div>
+      </div>
+      <div class="test-direction">${formatOptionsHtml('test-format', state.test.format)}</div>
+      <div class="test-direction">${directionOptionsHtml('test-direction', state.test.direction, directionKeys)}</div>
+      <button class="button primary test-start" id="start-test">테스트 시작</button>
+    </div>`;
+  byId('test-from').value = state.test.from;
+  byId('test-to').value = state.test.to;
+  byId('test-count').value = state.test.count;
+  document.querySelectorAll('input[name="test-format"]').forEach(input => input.onchange = () => {
+    state.test.from = Number(byId('test-from').value);
+    state.test.to = Number(byId('test-to').value);
+    state.test.count = byId('test-count').value;
+    state.test.format = input.value;
+    renderTestSetup();
+  });
+  byId('start-test').onclick = startTest;
+}
+function selectTestAnswer(answer) {
+  if (state.test.status !== 'running') return;
+  state.test.selected = answer;
+  renderTest();
+}
+function commitMatchAnswer(rowIndex, value) {
+  if (state.test.status !== 'running') return;
+  state.test.matchSelections[rowIndex] = value;
+  renderTest();
+}
+function nextTestQuestion() {
+  if (state.test.status !== 'running') return;
+  if (state.test.format === 'match') {
+    if (state.test.matchSelections.some(sel => !sel.trim())) return;
+    const group = state.test.groups[0];
+    group.indices.forEach((qIndex, i) => {
+      const typed = state.test.matchSelections[i].trim().toLowerCase();
+      const match = group.options.find(o => o.letter === typed);
+      const text = match ? match.text : state.test.matchSelections[i].trim();
+      const question = state.test.questions[qIndex];
+      const correct = !!match && text === question.correct;
+      state.test.answers[qIndex] = { selected: text, correct };
+      if (!correct) recordWrong(question.setNumber, question.term);
+    });
+    state.test.status = 'results';
+    renderTest();
+    return;
+  }
+  if (!state.test.selected) return;
+  const question = state.test.questions[state.test.index];
+  const correct = state.test.selected === question.correct;
+  state.test.answers.push({ selected: state.test.selected, correct });
+  if (!correct) recordWrong(question.setNumber, question.term);
+  state.test.index += 1;
+  state.test.selected = '';
+  if (state.test.index >= state.test.questions.length) state.test.status = 'results';
+  renderTest();
+}
+function renderMatchQuestion() {
+  const group = state.test.groups[0];
+  const total = group.indices.length;
+  const usedLetters = new Set(state.test.matchSelections.map(sel => sel.trim().toLowerCase()).filter(Boolean));
+  const answeredCount = state.test.matchSelections.filter(sel => sel.trim()).length;
+  const rows = group.indices.map((qIndex, i) => {
+    const question = state.test.questions[qIndex];
+    const value = state.test.matchSelections[i];
+    const done = !!value.trim();
+    return `<div class="match-row ${done?'done':''}"><span class="match-num">${qIndex + 1}.</span><span class="match-term">${escapeText(question.term)}</span><input class="match-input" type="text" maxlength="3" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="__" value="${escapeText(value)}" data-row="${i}"></div>`;
+  }).join('');
+  const legend = group.options.map(o => `<div class="match-def ${usedLetters.has(o.letter)?'done':''}"><b>${o.letter}.</b> ${escapeText(o.text)}</div>`).join('');
+  const allAnswered = answeredCount === total;
+  byId('test-stage').innerHTML = `
+    <div class="test-head"><div class="test-progress"><span style="width:${answeredCount / total * 100}%"></span></div><div class="counter">${answeredCount} / ${total} 매칭 완료</div></div>
+    <div class="learn-card">
+      <div class="question-kicker">매칭형 · 단어 번호 옆에 알맞은 뜻의 알파벳을 적으세요</div>
+      <div class="match-grid"><div class="match-words">${rows}</div><div class="match-defs">${legend}</div></div>
+    </div>
+    <div class="test-actions"><span>선택한 답의 정오 여부는 시험 종료 후 공개됩니다.</span><button class="button primary" id="test-next" ${allAnswered?'':'disabled'}>채점하기 →</button></div>`;
+  const inputs = byId('test-stage').querySelectorAll('.match-input');
+  inputs.forEach((input, i) => {
+    input.onchange = () => commitMatchAnswer(i, input.value);
+    input.onkeydown = event => {
+      if (event.key !== 'Enter') return;
+      event.preventDefault();
+      matchFocusRow = Math.min(i + 1, total - 1);
+      commitMatchAnswer(i, input.value);
+    };
+  });
+  if (matchFocusRow !== null) {
+    const target = byId('test-stage').querySelectorAll('.match-input')[matchFocusRow];
+    matchFocusRow = null;
+    if (target) { target.focus(); target.select(); }
+  }
+  byId('test-next').onclick = nextTestQuestion;
+}
+function renderTestQuestion() {
+  if (state.test.format === 'match') { renderMatchQuestion(); return; }
+  const question = state.test.questions[state.test.index];
+  const total = state.test.questions.length;
+  byId('test-stage').innerHTML = `
+    <div class="test-head"><div class="test-progress"><span style="width:${state.test.index / total * 100}%"></span></div><div class="counter">${state.test.index + 1} / ${total}</div></div>
+    <div class="learn-card">
+      <div><div class="question-kicker">Set ${question.setNumber} · ${directionInfo(question.direction).short} · 1–4 키</div><div class="question-prompt">${escapeText(question.prompt)}</div></div>
+      <div class="choices">${question.options.map((option, index) => `<button class="choice test-choice ${state.test.selected===option?'selected':''}" data-answer="${escapeText(option)}"><span class="choice-number">${index + 1}</span>${escapeText(option)}</button>`).join('')}</div>
+    </div>
+    <div class="test-actions"><span>선택한 답의 정오 여부는 시험 종료 후 공개됩니다.</span><button class="button primary" id="test-next" ${state.test.selected?'':'disabled'}>${state.test.index === total - 1 ? '채점하기' : '다음 문제'} →</button></div>`;
+  byId('test-stage').querySelectorAll('.test-choice').forEach(button => button.onclick = () => selectTestAnswer(button.dataset.answer));
+  byId('test-next').onclick = nextTestQuestion;
+}
+function renderTestResults() {
+  const total = state.test.questions.length;
+  const score = state.test.answers.filter(answer => answer.correct).length;
+  const percent = Math.round(score / total * 100);
+  const wrong = state.test.questions.map((question, index) => ({ question, answer: state.test.answers[index] })).filter(result => !result.answer.correct);
+  byId('test-stage').innerHTML = `
+    <div class="results-card">
+      <div class="score-ring" style="--score:${percent * 3.6}deg"><strong>${percent}%</strong></div>
+      <div class="results-title"><h3>${score} / ${total}</h3><p>Set ${state.test.from}–${state.test.to} 범위 테스트를 완료했습니다.</p></div>
+      <div class="result-actions"><button class="button primary" id="repeat-test">같은 설정으로 다시 보기</button><button class="button" id="test-settings">범위 다시 설정</button></div>
+      ${wrong.length ? `<div class="wrong-list"><div class="label">오답 ${wrong.length}개</div>${wrong.map(({question,answer}) => `<article class="wrong-row"><div class="prompt">Set ${question.setNumber} · ${escapeText(question.prompt)}</div><div class="answer"><del>${escapeText(answer.selected)}</del> → <strong>${escapeText(question.correct)}</strong></div></article>`).join('')}</div>` : '<div class="empty">모든 문제를 맞혔습니다!</div>'}
+    </div>`;
+  byId('repeat-test').onclick = buildTestQuestions;
+  byId('test-settings').onclick = () => { state.test.status = 'setup'; renderTest(); };
+}
+function renderTest() {
+  if (state.test.status === 'setup') renderTestSetup();
+  else if (state.test.status === 'running') renderTestQuestion();
+  else renderTestResults();
+}
+
+function wrongReviewCandidates(from = state.wrongReview.from, to = state.wrongReview.to, minimum = state.wrongReview.minimum) {
+  const termCounts = loadWrongTerms();
+  return poolForRange(from, to).filter(item => (Number(termCounts[item.setNumber]?.[item.term]) || 0) >= Number(minimum));
+}
+function updateWrongReviewPreview() {
+  const from = Number(byId('review-from').value);
+  const to = Number(byId('review-to').value);
+  const minimum = Math.max(1, Number(byId('review-minimum').value) || 1);
+  const count = wrongReviewCandidates(from, to, minimum).length;
+  byId('review-preview-count').textContent = `${count}개`;
+  byId('start-wrong-review').disabled = count === 0;
+}
+function renderWrongReviewSetup() {
+  const setOptions = allSets.map(number => `<option value="${number}">Set ${number}</option>`).join('');
+  byId('wrong-review-stage').innerHTML = `
+    <div class="test-config">
+      <h3>오답만 다시 학습하기</h3>
+      <p>선택한 세트 범위에서 누적 오답 횟수가 기준 이상인 단어만 모읍니다. 한 라운드가 끝나면 그 라운드에서 틀린 단어만 다음 라운드에 다시 나옵니다.</p>
+      <div class="test-grid">
+        <div class="test-field"><label class="label" for="review-from">시작 세트</label><select class="select" id="review-from">${setOptions}</select></div>
+        <div class="test-field"><label class="label" for="review-to">끝 세트</label><select class="select" id="review-to">${setOptions}</select></div>
+        <div class="test-field"><label class="label" for="review-minimum">최소 오답 횟수</label><input class="select" id="review-minimum" type="number" min="1" step="1" inputmode="numeric" value="${state.wrongReview.minimum}"></div>
+      </div>
+      <div class="test-direction">${directionOptionsHtml('wrong-review-direction', state.wrongReview.direction)}</div>
+      <div class="review-preview"><span>현재 조건에 맞는 오답 단어</span><strong id="review-preview-count">0개</strong></div>
+      <button class="button primary test-start" id="start-wrong-review">오답학습 시작</button>
+    </div>`;
+  byId('review-from').value = state.wrongReview.from;
+  byId('review-to').value = state.wrongReview.to;
+  byId('review-minimum').value = state.wrongReview.minimum;
+  byId('review-from').onchange = updateWrongReviewPreview;
+  byId('review-to').onchange = updateWrongReviewPreview;
+  byId('review-minimum').oninput = updateWrongReviewPreview;
+  byId('start-wrong-review').onclick = startWrongReview;
+  updateWrongReviewPreview();
+}
+function startWrongReview() {
+  state.wrongReview.from = Number(byId('review-from').value);
+  state.wrongReview.to = Number(byId('review-to').value);
+  if (allSets.indexOf(state.wrongReview.from) > allSets.indexOf(state.wrongReview.to)) {
+    [state.wrongReview.from, state.wrongReview.to] = [state.wrongReview.to, state.wrongReview.from];
+  }
+  state.wrongReview.minimum = Math.max(1, Math.floor(Number(byId('review-minimum').value) || 1));
+  state.wrongReview.direction = document.querySelector('input[name="wrong-review-direction"]:checked').value;
+  buildWrongReview();
+}
+function buildWrongReview() {
+  const fullPool = poolForRange(state.wrongReview.from, state.wrongReview.to);
+  const candidates = shuffleArray(wrongReviewCandidates());
+  const direction = state.wrongReview.direction;
+  state.wrongReview.questions = candidates.map(item => {
+    const correct = answerFor(item, direction);
+    const possible = [...new Set(fullPool.filter(other => other.term !== item.term).map(other => answerFor(other, direction)))].filter(option => option !== correct);
+    return {
+      setNumber: item.setNumber,
+      term: item.term,
+      prompt: promptFor(item, direction),
+      correct,
+      options: shuffleArray([correct, ...shuffleArray(possible).slice(0, 3)]),
+      wrongCount: wrongTermCount(item.setNumber, item.term)
+    };
+  });
+  state.wrongReview.status = 'running';
+  state.wrongReview.totalItems = state.wrongReview.questions.length;
+  state.wrongReview.nextRound = [];
+  state.wrongReview.round = 1;
+  state.wrongReview.index = 0;
+  state.wrongReview.selected = '';
+  state.wrongReview.answered = false;
+  state.wrongReview.correct = false;
+  state.wrongReview.answers = [];
+  if (!state.wrongReview.questions.length) state.wrongReview.status = 'setup';
+  renderWrongReview();
+}
+function gradeWrongReview(answer) {
+  if (state.wrongReview.answered || state.wrongReview.status !== 'running') return;
+  const question = state.wrongReview.questions[state.wrongReview.index];
+  const correct = answer === question.correct;
+  state.wrongReview.selected = answer;
+  state.wrongReview.answered = true;
+  state.wrongReview.correct = correct;
+  state.wrongReview.answers.push({ selected: answer, correct });
+  if (!correct) {
+    state.wrongReview.nextRound.push(question);
+    recordWrong(question.setNumber, question.term);
+  }
+  renderWrongReview();
+}
+function nextWrongReview() {
+  if (!state.wrongReview.answered) return;
+  state.wrongReview.index += 1;
+  state.wrongReview.selected = '';
+  state.wrongReview.answered = false;
+  state.wrongReview.correct = false;
+  if (state.wrongReview.index >= state.wrongReview.questions.length) {
+    if (state.wrongReview.nextRound.length) {
+      state.wrongReview.questions = shuffleArray(state.wrongReview.nextRound).map(question => ({ ...question, options: shuffleArray(question.options), wrongCount: wrongTermCount(question.setNumber, question.term) }));
+      state.wrongReview.nextRound = [];
+      state.wrongReview.round += 1;
+      state.wrongReview.index = 0;
+    } else {
+      state.wrongReview.status = 'results';
+    }
+  }
+  renderWrongReview();
+}
+function renderWrongReviewQuestion() {
+  const review = state.wrongReview;
+  const question = review.questions[review.index];
+  const total = review.questions.length;
+  byId('wrong-review-stage').innerHTML = `
+    <div class="test-head"><div class="test-progress"><span style="width:${review.index / total * 100}%"></span></div><div class="counter">Round ${review.round} · ${review.index + 1} / ${total}</div></div>
+    <div class="learn-card">
+      <div><div class="question-kicker">Set ${question.setNumber} · 누적 오답 ${wrongTermCount(question.setNumber, question.term)}회 · 1–4 키</div><div class="question-prompt">${escapeText(question.prompt)}</div></div>
+      <div><div class="choices">${question.options.map((option, index) => {
+        const className = review.answered ? (option === question.correct ? 'correct' : (option === review.selected ? 'wrong' : '')) : '';
+        return `<button class="choice ${className}" data-answer="${escapeText(option)}" ${review.answered?'disabled':''}><span class="choice-number">${index + 1}</span>${escapeText(option)}</button>`;
+      }).join('')}</div>
+      ${review.answered ? `<div class="learn-feedback ${review.correct?'good':'bad'}"><div><strong>${review.correct?'정답입니다!':'다음 라운드에 다시 나옵니다.'}</strong>${escapeText(question.term)} · ${escapeText(question.correct)}</div><button class="button primary" id="wrong-review-next">${review.index === total - 1 ? (review.nextRound.length ? '다음 라운드' : '결과 보기') : '다음 문제'} →</button></div>` : ''}</div>
+    </div>`;
+  if (!review.answered) byId('wrong-review-stage').querySelectorAll('.choice').forEach(button => button.onclick = () => gradeWrongReview(button.dataset.answer));
+  else byId('wrong-review-next').onclick = nextWrongReview;
+}
+function renderWrongReviewResults() {
+  const review = state.wrongReview;
+  const total = review.totalItems;
+  const wrongAttempts = review.answers.filter(answer => !answer.correct).length;
+  byId('wrong-review-stage').innerHTML = `
+    <div class="results-card">
+      <div class="score-ring" style="--score:360deg"><strong>완료</strong></div>
+      <div class="results-title"><h3>${total}개 모두 정답</h3><p>Set ${review.from}–${review.to}, 오답 ${review.minimum}회 이상 · 재도전 오답 ${wrongAttempts}회</p></div>
+      <div class="result-actions"><button class="button primary" id="repeat-wrong-review">같은 조건으로 다시 학습</button><button class="button" id="wrong-review-settings">조건 다시 설정</button></div>
+    </div>`;
+  byId('repeat-wrong-review').onclick = buildWrongReview;
+  byId('wrong-review-settings').onclick = () => { state.wrongReview.status = 'setup'; renderWrongReview(); };
+}
+function renderWrongReview() {
+  if (state.wrongReview.status === 'setup') renderWrongReviewSetup();
+  else if (state.wrongReview.status === 'running') renderWrongReviewQuestion();
+  else renderWrongReviewResults();
+}
+
+const COURSE_BATCH = 5;
+const COURSE_STEPS = [
+  { key: 'preview',      kind: 'card',   badge: '①', label: '단어 보기',      kicker: '눈으로 익히기' },
+  { key: 'recognize',    kind: 'choice', badge: '②', label: '한글 뜻 → 단어', kicker: '방금 본 단어 중에서', direction: 'definition-to-word', pool: 'batch' },
+  { key: 'recognize-en', kind: 'choice', badge: '③', label: '영어 뜻 → 단어', kicker: '방금 본 단어 중에서', direction: 'en-to-word', pool: 'batch' },
+  { key: 'reverse',      kind: 'choice', badge: '④', label: '단어 → 한글 뜻', kicker: '반대 방향으로',       direction: 'word-to-definition', pool: 'set' },
+  { key: 'reverse-en',   kind: 'choice', badge: '⑤', label: '단어 → 영어 뜻', kicker: '반대 방향으로',       direction: 'word-to-en', pool: 'set' },
+  { key: 'recall',       kind: 'write',  badge: '⑥', label: '직접 쓰기',      kicker: '첫 글자 힌트와 함께', direction: 'definition-to-word', hint: true }
+];
+const REVIEW_SPEC = { key: 'review', kind: 'write', badge: '↻', label: '누적 복습', kicker: '지금까지 배운 단어', direction: 'definition-to-word', hint: true };
+const FINAL_SPEC  = { key: 'final',  kind: 'write', badge: '★', label: '최종 점검', kicker: '힌트 없이 떠올리기', direction: 'definition-to-word', hint: false };
+
+function courseKey() { return `setb-course-v1-${state.set}`; }
+function loadCourseSave() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(courseKey()) || '{}');
+    return { planIndex: Math.max(0, Number(saved.planIndex) || 0), missed: saved.missed && typeof saved.missed === 'object' ? saved.missed : {} };
+  } catch (_) { return { planIndex: 0, missed: {} }; }
+}
+function saveCourse() { localStorage.setItem(courseKey(), JSON.stringify({ planIndex: state.course.planIndex, missed: state.course.missed })); }
+function courseBatches() {
+  const terms = selectedItems().map(item => item.term);
+  const batches = [];
+  for (let i = 0; i < terms.length; i += COURSE_BATCH) batches.push(terms.slice(i, i + COURSE_BATCH));
+  return batches;
+}
+function coursePlan() {
+  const batches = courseBatches();
+  const plan = [];
+  batches.forEach((batch, b) => {
+    COURSE_STEPS.forEach((_, s) => plan.push({ type: 'step', step: s, batch: b, terms: batch }));
+    if (b > 0) plan.push({ type: 'review', batch: b, terms: batches.slice(0, b + 1).flat() });
+  });
+  plan.push({ type: 'final', terms: batches.flat() });
+  return plan;
+}
+function courseItem(term) { return selectedItems().find(item => item.term === term); }
+function courseNode() { return coursePlan()[state.course.planIndex] || null; }
+function courseSpec() {
+  const node = courseNode();
+  if (!node) return null;
+  if (node.type === 'step') return COURSE_STEPS[node.step];
+  return node.type === 'review' ? REVIEW_SPEC : FINAL_SPEC;
+}
+function wordHint(word) {
+  return String(word).split('').map((c, i) => i === 0 ? c : (/[a-z]/i.test(c) ? '_' : c)).join(' ');
+}
+function buildCourseOptions() {
+  const spec = courseSpec(), node = courseNode(), term = state.course.queue[0];
+  if (!spec || !node || !term || spec.kind !== 'choice') { state.course.options = []; return; }
+  const item = courseItem(term);
+  const correct = answerFor(item, spec.direction);
+  const source = spec.pool === 'batch'
+    ? node.terms.filter(other => other !== term).map(courseItem).filter(Boolean)
+    : selectedItems().filter(other => other.term !== term);
+  const possible = [...new Set(source.map(other => answerFor(other, spec.direction)))].filter(option => option !== correct);
+  state.course.options = shuffleArray([correct, ...shuffleArray(possible).slice(0, 3)]);
+}
+function enterCourseNode() {
+  const node = courseNode(), spec = courseSpec();
+  state.course.answered = false;
+  state.course.selected = '';
+  state.course.correct = false;
+  state.course.hintShown = false;
+  if (!node || !spec) { state.course.queue = []; return; }
+  if (node.type === 'review') state.course.queue = shuffleArray(node.terms).slice(0, COURSE_BATCH);
+  else state.course.queue = spec.kind === 'card' ? [...node.terms] : shuffleArray(node.terms);
+  buildCourseOptions();
+}
+function startCourse(restart) {
+  const saved = loadCourseSave();
+  state.course.planIndex = restart ? 0 : saved.planIndex;
+  state.course.missed = restart ? {} : saved.missed;
+  if (state.course.planIndex >= coursePlan().length) { finishCourse(); return; }
+  state.course.status = 'running';
+  enterCourseNode();
+  saveCourse();
+  renderCourse();
+}
+function advanceCourse() {
+  state.course.planIndex += 1;
+  if (state.course.planIndex >= coursePlan().length) { finishCourse(); return; }
+  enterCourseNode();
+  saveCourse();
+  renderCourse();
+}
+function gradeCourse(answer) {
+  if (state.course.answered) return;
+  const spec = courseSpec(), term = state.course.queue[0];
+  if (!spec || !term) return;
+  const item = courseItem(term);
+  const correct = normalizeAnswer(answer) === normalizeAnswer(answerFor(item, spec.direction));
+  state.course.answered = true;
+  state.course.selected = answer;
+  state.course.correct = correct;
+  if (!correct) {
+    state.course.missed[term] = (Number(state.course.missed[term]) || 0) + 1;
+    recordWrong(state.set, term);
+  }
+  saveCourse();
+  renderCourse();
+}
+function nextCourseQuestion() {
+  const spec = courseSpec();
+  if (!spec) return;
+  if (spec.kind !== 'card' && !state.course.answered) return;
+  const term = state.course.queue.shift();
+  if (spec.kind !== 'card' && !state.course.correct) state.course.queue.push(term);
+  state.course.answered = false;
+  state.course.selected = '';
+  state.course.correct = false;
+  state.course.hintShown = false;
+  if (!state.course.queue.length) { advanceCourse(); return; }
+  buildCourseOptions();
+  renderCourse();
+}
+function finishCourse() {
+  state.course.planIndex = coursePlan().length;
+  state.course.status = 'complete';
+  ['definition-to-word','word-to-definition','en-to-word','word-to-en'].forEach(direction => {
+    const key = `setb-learn-v2-${direction}-${state.set}`;
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(key) || '{}'); } catch (_) {}
+    selectedItems().forEach(item => {
+      const old = saved[item.term] || {};
+      saved[item.term] = { level: Math.max(1, Math.min(2, Number(old.level) || 0)), correct: Number(old.correct) || 0, wrong: Number(old.wrong) || 0 };
+    });
+    localStorage.setItem(key, JSON.stringify(saved));
+  });
+  saveCourse();
+  state.learn.current = null;
+  state.learn.lastTerm = '';
+  state.learn.answered = false;
+  renderCourse();
+  renderLearn();
+}
+function renderCourseIntro() {
+  const saved = loadCourseSave();
+  const plan = coursePlan();
+  const batches = courseBatches().length;
+  const finished = saved.planIndex >= plan.length;
+  const resumable = saved.planIndex > 0 && !finished;
+  byId('course-stage').innerHTML = `
+    <div class="test-config">
+      <h3>${setLabel(state.set)} 첫 학습 코스</h3>
+      <p>단어를 하나도 몰라도 괜찮습니다. 먼저 보여주고 그 다음에 물어봅니다. ${selectedItems().length}개를 ${COURSE_BATCH}개씩 ${batches}묶음으로 나눠, 아래 네 단계를 묶음마다 반복하며 따라가기만 하면 됩니다.</p>
+      <div class="course-ladder">${COURSE_STEPS.map(step => `<div class="ladder-row"><span class="ladder-badge">${step.badge}</span><div><strong>${step.label}</strong><small>${step.kicker}</small></div></div>`).join('')}</div>
+      <div class="review-preview"><span>묶음이 끝날 때마다 누적 복습, 마지막에 25개 전체 점검</span><strong>${plan.length}단계</strong></div>
+      ${finished ? '<div class="learn-feedback good"><div><strong>이미 완주한 세트입니다.</strong>학습하기 탭에서 복습하거나 코스를 다시 돌 수 있습니다.</div></div>' : ''}
+      <button class="button primary test-start" id="course-start">${resumable ? `${Math.round(saved.planIndex / plan.length * 100)}%부터 이어하기` : '코스 시작하기'}</button>
+      ${(resumable || finished) ? '<button class="button course-restart" id="course-restart">처음부터 다시</button>' : ''}
+    </div>`;
+  byId('course-start').onclick = () => startCourse(finished);
+  if (byId('course-restart')) byId('course-restart').onclick = () => { if (confirm(`${setLabel(state.set)} 코스를 처음부터 다시 시작할까요?`)) startCourse(true); };
+}
+function renderCourseStage() {
+  const node = courseNode(), spec = courseSpec();
+  if (!node || !spec) { finishCourse(); return; }
+  const term = state.course.queue[0];
+  const item = courseItem(term);
+  if (!item) { advanceCourse(); return; }
+  const plan = coursePlan();
+  const batches = courseBatches().length;
+  const position = node.type === 'step' ? `묶음 ${node.batch + 1} / ${batches}` : (node.type === 'review' ? `누적 복습 ${node.batch} / ${batches - 1}` : '최종 점검');
+  const chips = COURSE_STEPS.map((step, i) => {
+    const status = node.type !== 'step' ? 'done' : (i < node.step ? 'done' : (i === node.step ? 'current' : ''));
+    return `<span class="course-step ${status}">${step.badge} ${step.label}</span>`;
+  }).join('') + (node.type !== 'step' ? `<span class="course-step current">${spec.badge} ${spec.label}</span>` : '');
+  const head = `
+    <div class="test-head"><div class="test-progress"><span style="width:${state.course.planIndex / plan.length * 100}%"></span></div><div class="counter">${position} · 남은 ${state.course.queue.length}개</div></div>
+    <div class="course-steps">${chips}</div>`;
+
+  if (spec.kind === 'card') {
+    byId('course-stage').innerHTML = head + `
+      <div class="learn-card">
+        <div>
+          <div class="question-kicker">${spec.badge} ${spec.label} · ${spec.kicker}</div>
+          <div class="course-term">${escapeText(item.term)}</div>
+          <div class="course-ko">${escapeText(item.definition)}</div>
+          ${item.en ? `<div class="course-en">${escapeText(item.en)}</div>` : ''}
+        </div>
+        <div class="course-card-actions"><button class="button" id="course-speak">◖) 발음 듣기</button><button class="button primary" id="course-next">봤어요 →</button></div>
+      </div>
+      <div class="learn-utility"><button class="button" id="course-exit">코스 처음 화면</button><span></span></div>`;
+    byId('course-speak').onclick = () => speak(item.term);
+    byId('course-next').onclick = nextCourseQuestion;
+    byId('course-exit').onclick = exitCourse;
+    return;
+  }
+
+  const correctAnswer = answerFor(item, spec.direction);
+  const showHint = spec.hint || state.course.hintShown;
+  const body = spec.kind === 'choice'
+    ? `<div class="choices">${state.course.options.map((option, i) => {
+        const className = state.course.answered ? (option === correctAnswer ? 'correct' : (option === state.course.selected ? 'wrong' : '')) : '';
+        return `<button class="choice ${className}" data-answer="${escapeText(option)}" ${state.course.answered?'disabled':''}><span class="choice-number">${i + 1}</span>${escapeText(option)}</button>`;
+      }).join('')}</div>`
+    : `${showHint ? `<div class="hint-text">${escapeText(wordHint(correctAnswer))}</div>` : ''}<form class="answer-form" id="course-form"><input class="answer-input" id="course-input" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="영단어를 입력하세요" value="${escapeText(state.course.selected)}" ${state.course.answered?'disabled':''}><button class="button primary" type="submit" ${state.course.answered?'disabled':''}>확인</button></form>`;
+  const feedback = state.course.answered
+    ? `<div class="learn-feedback ${state.course.correct?'good':'bad'}"><div><strong>${state.course.correct ? '정답입니다!' : '괜찮아요. 이 단어는 뒤에서 다시 나옵니다.'}</strong>${escapeText(item.term)} · ${escapeText(item.definition)}${item.en ? `<span class="feedback-extra">${escapeText(item.en)}</span>` : ''}</div><button class="button primary" id="course-next">다음 →</button></div>`
+    : '';
+  const utility = state.course.answered
+    ? `<div class="learn-utility"><button class="button" id="course-exit">코스 처음 화면</button><button class="button" id="course-speak">◖) ${escapeText(item.term)} 발음</button></div>`
+    : `<div class="learn-utility"><button class="button" id="course-dont-know">잘 모르겠어요</button>${spec.kind === 'write' && !showHint ? '<button class="button" id="course-hint">힌트 보기</button>' : '<span></span>'}</div>`;
+  byId('course-stage').innerHTML = head + `
+    <div class="learn-card">
+      <div><div class="question-kicker">${spec.badge} ${spec.label} · ${spec.kicker}</div><div class="question-prompt">${escapeText(promptFor(item, spec.direction))}</div></div>
+      <div>${body}${feedback}</div>
+    </div>${utility}`;
+  if (state.course.answered) {
+    byId('course-next').onclick = nextCourseQuestion;
+    byId('course-speak').onclick = () => speak(item.term);
+    byId('course-exit').onclick = exitCourse;
+  } else {
+    byId('course-stage').querySelectorAll('.choice').forEach(button => button.onclick = () => gradeCourse(button.dataset.answer));
+    const form = byId('course-form');
+    if (form) {
+      form.onsubmit = event => { event.preventDefault(); gradeCourse(byId('course-input').value); };
+      setTimeout(() => byId('course-input')?.focus(), 0);
+    }
+    byId('course-dont-know').onclick = () => gradeCourse('');
+    if (byId('course-hint')) byId('course-hint').onclick = () => { state.course.hintShown = true; renderCourse(); };
+  }
+}
+function renderCourseComplete() {
+  const missed = Object.entries(state.course.missed).sort((a, b) => b[1] - a[1]);
+  byId('course-stage').innerHTML = `
+    <div class="results-card">
+      <div class="score-ring" style="--score:360deg"><strong>완주</strong></div>
+      <div class="results-title"><h3>${setLabel(state.set)} 코스 완주</h3><p>${selectedItems().length}개 단어를 모두 통과했습니다. 학습하기의 세 방향 모두 <b>학습 중</b> 단계로 기록해 두었습니다.</p></div>
+      <div class="result-actions"><button class="button primary" id="course-to-learn">학습하기로 이동</button>${missed.length ? '<button class="button" id="course-to-review">오답학습 하기</button>' : ''}<button class="button" id="course-to-test">테스트 보기</button><button class="button" id="course-again">코스 다시 하기</button></div>
+      ${missed.length
+        ? `<div class="wrong-list"><div class="label">코스 중 헷갈린 단어 ${missed.length}개 · 누적 오답에 기록되었습니다</div>${missed.slice(0, 12).map(([term, count]) => `<article class="wrong-row"><div class="prompt">${count}번 헷갈림</div><div class="answer"><strong>${escapeText(term)}</strong> · ${escapeText(courseItem(term)?.definition || '')}</div></article>`).join('')}</div>`
+        : '<div class="empty">한 번도 틀리지 않았습니다!</div>'}
+    </div>`;
+  byId('course-to-learn').onclick = () => setTab('learn');
+  if (byId('course-to-review')) byId('course-to-review').onclick = () => { state.wrongReview.status = 'setup'; setTab('wrong-review'); };
+  byId('course-to-test').onclick = () => setTab('test');
+  byId('course-again').onclick = () => { if (confirm(`${setLabel(state.set)} 코스를 처음부터 다시 시작할까요?`)) startCourse(true); };
+}
+function exitCourse() { state.course.status = 'setup'; renderCourse(); }
+function renderCourse() {
+  if (state.course.status === 'setup') renderCourseIntro();
+  else if (state.course.status === 'complete') renderCourseComplete();
+  else renderCourseStage();
+}
+
+function renderCard() {
+  const item = currentItem();
+  if (!item) return;
+  byId('card-face').innerHTML = state.flipped
+    ? `<div class="face-label">Definition</div><div class="definition">${escapeText(item.definition)}</div>${item.en ? `<div class="definition-en">${escapeText(item.en)}</div>` : ''}`
+    : `<div class="face-label">Term</div><div class="term">${escapeText(item.term)}</div>`;
+  byId('counter').textContent = `${state.index + 1} / ${state.order.length}`;
+  byId('progress-bar').style.width = `${((state.index + 1) / state.order.length) * 100}%`;
+  const known = knownTerms().has(item.term);
+  byId('known-button').textContent = known ? '✓ 외운 단어' : '외웠어요';
+  byId('known-button').setAttribute('aria-pressed', known ? 'true' : 'false');
+}
+function renderList() {
+  const query = byId('search').value.trim().toLowerCase();
+  const sort = byId('list-sort').value;
+  const filtered = selectedItems()
+    .map((item, sourceIndex) => ({ ...item, sourceIndex, wrong: wrongTermCount(state.set, item.term) }))
+    .filter(item => `${item.term} ${item.definition} ${item.en || ''}`.toLowerCase().includes(query));
+  if (sort === 'wrong') filtered.sort((a, b) => b.wrong - a.wrong || a.sourceIndex - b.sourceIndex);
+  if (sort === 'alpha') filtered.sort((a, b) => a.term.localeCompare(b.term));
+  byId('rows').innerHTML = filtered.length ? filtered.map((item, i) => `
+    <article class="word-row">
+      <div class="word"><span style="color:var(--muted);font:600 11px system-ui">${String(item.sourceIndex+1).padStart(2,'0')}</span><br>${escapeText(item.term)}<br><span class="word-wrong">오답 ${item.wrong}회</span></div>
+      <div class="meaning">${escapeText(item.definition)}${item.en ? `<div class="meaning-en">${escapeText(item.en)}</div>` : ''}</div>
+      <button class="speak" data-word="${escapeText(item.term)}" aria-label="${escapeText(item.term)} 발음 듣기">◖)</button>
+    </article>`).join('') : '<div class="empty">검색 결과가 없습니다.</div>';
+  byId('rows').querySelectorAll('.speak').forEach(button => button.onclick = () => speak(button.dataset.word));
+}
+function chooseSet(number) {
+  if (number !== ALL_SET && !DATA[number]) return;
+  state.set = number;
+  const direction = state.learn.direction;
+  const forceType = state.learn.forceType;
+  state.learn = { direction, forceType, current: null, type: 'choice', options: [], answered: false, chosen: '', correct: false, lastTerm: '', streak: 0, attempts: 0 };
+  state.course = { status: 'setup', planIndex: 0, queue: [], options: [], answered: false, selected: '', correct: false, hintShown: false, missed: {} };
+  setOrder(); renderAll();
+  history.replaceState(null, '', `#set-${number}`);
+}
+function move(delta) {
+  state.index = (state.index + delta + state.order.length) % state.order.length;
+  state.flipped = false; renderCard();
+}
+function flip() { state.flipped = !state.flipped; renderCard(); }
+function shuffle() { state.order = shuffleArray(state.order); state.index = 0; state.flipped = false; renderCard(); }
+function toggleKnown() {
+  const terms = knownTerms(); const term = currentItem().term;
+  terms.has(term) ? terms.delete(term) : terms.add(term);
+  saveKnown(terms); renderCard();
+}
+function speak(word) {
+  if (!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US'; utterance.rate = .82; speechSynthesis.speak(utterance);
+}
+function setTab(tab) {
+  state.tab = tab;
+  document.querySelectorAll('.tab').forEach(button => button.classList.toggle('active', button.dataset.tab === tab));
+  byId('course-panel').classList.toggle('active', tab === 'course');
+  byId('learn-panel').classList.toggle('active', tab === 'learn');
+  byId('wrong-review-panel').classList.toggle('active', tab === 'wrong-review');
+  byId('test-panel').classList.toggle('active', tab === 'test');
+  byId('cards-panel').classList.toggle('active', tab === 'cards');
+  byId('list-panel').classList.toggle('active', tab === 'list');
+  if (tab === 'course') renderCourse();
+  if (tab === 'learn') renderLearn();
+  if (tab === 'wrong-review') renderWrongReview();
+  if (tab === 'test') renderTest();
+  if (tab === 'list') renderList();
+}
+function renderFooter() {
+  const position = setSequence.indexOf(state.set);
+  const prev = setSequence[Math.max(0, position - 1)], next = setSequence[Math.min(setSequence.length - 1, position + 1)];
+  byId('prev-set').disabled = position === 0;
+  byId('next-set').disabled = position === setSequence.length - 1;
+  byId('prev-set').textContent = `← ${setLabel(prev)}`;
+  byId('next-set').textContent = `${setLabel(next)} →`;
+}
+function renderAll() {
+  renderSetButtons(); renderSelector(); renderWrongSummary(); renderHeader(); renderCourse(); renderLearn(); renderWrongReview(); renderTest(); renderCard(); renderList(); renderFooter();
+}
+
+byId('set-select').onchange = event => chooseSet(event.target.value === ALL_SET ? ALL_SET : Number(event.target.value));
+byId('reset-wrong').onclick = resetWrongCount;
+byId('export-data').onclick = exportStudyData;
+byId('import-data').onclick = () => byId('import-data-file').click();
+byId('import-data-file').onchange = importStudyData;
+byId('flashcard').onclick = flip;
+byId('prev').onclick = () => move(-1);
+byId('next').onclick = () => move(1);
+byId('known-button').onclick = toggleKnown;
+byId('shuffle').onclick = shuffle;
+byId('pronounce').onclick = () => speak(currentItem().term);
+byId('reset').onclick = () => { localStorage.removeItem(progressKey()); renderCard(); };
+byId('search').oninput = renderList;
+byId('list-sort').onchange = renderList;
+byId('print').onclick = () => { setTab('list'); window.print(); };
+byId('prev-set').onclick = () => chooseSet(setSequence[setSequence.indexOf(state.set) - 1]);
+byId('next-set').onclick = () => chooseSet(setSequence[setSequence.indexOf(state.set) + 1]);
+document.querySelectorAll('.tab').forEach(button => button.onclick = () => setTab(button.dataset.tab));
+document.querySelectorAll('.learn-mode').forEach(button => button.onclick = () => setLearnDirection(button.dataset.direction));
+document.querySelectorAll('#learn-type-switch button').forEach(button => button.onclick = () => setLearnForceType(button.dataset.type));
+document.addEventListener('keydown', event => {
+  const activeTag = document.activeElement.tagName;
+  if (state.tab === 'course' && state.course.status === 'running') {
+    const spec = courseSpec();
+    if (spec && spec.kind === 'choice' && !state.course.answered && /^[1-4]$/.test(event.key)) {
+      const answer = state.course.options[Number(event.key) - 1];
+      if (answer) { event.preventDefault(); gradeCourse(answer); }
+      return;
+    }
+    if ((state.course.answered || (spec && spec.kind === 'card')) && (event.code === 'Space' || event.key === 'Enter') && !['INPUT','TEXTAREA','BUTTON','SELECT'].includes(activeTag)) {
+      event.preventDefault(); nextCourseQuestion();
+    }
+    return;
+  }
+  if (state.tab === 'wrong-review' && state.wrongReview.status === 'running') {
+    if (!state.wrongReview.answered && /^[1-4]$/.test(event.key)) {
+      const answer = state.wrongReview.questions[state.wrongReview.index]?.options[Number(event.key) - 1];
+      if (answer) { event.preventDefault(); gradeWrongReview(answer); }
+      return;
+    }
+    if (state.wrongReview.answered && (event.code === 'Space' || event.key === 'Enter') && !['INPUT','TEXTAREA','BUTTON','SELECT'].includes(activeTag)) {
+      event.preventDefault(); nextWrongReview();
+    }
+    return;
+  }
+  if (state.tab === 'test' && state.test.status === 'running') {
+    if (state.test.format === 'match') return;
+    if (/^[1-4]$/.test(event.key)) {
+      const answer = state.test.questions[state.test.index]?.options[Number(event.key) - 1];
+      if (answer) { event.preventDefault(); selectTestAnswer(answer); }
+      return;
+    }
+    if (event.code === 'Space' && state.test.selected && !['INPUT','TEXTAREA','BUTTON','SELECT'].includes(activeTag)) {
+      event.preventDefault(); nextTestQuestion();
+    }
+    return;
+  }
+  if (state.tab === 'learn') {
+    if (!state.learn.answered && state.learn.type === 'choice' && /^[1-4]$/.test(event.key)) {
+      const answer = state.learn.options[Number(event.key) - 1];
+      if (answer) { event.preventDefault(); gradeLearn(answer); }
+      return;
+    }
+    if (state.learn.answered && (event.code === 'Space' || event.key === 'Enter') && !['INPUT','TEXTAREA','BUTTON','SELECT'].includes(activeTag)) {
+      event.preventDefault(); nextLearnQuestion();
+    }
+    return;
+  }
+  if (state.tab !== 'cards' || ['INPUT','SELECT'].includes(activeTag)) return;
+  if (event.key === 'ArrowLeft') move(-1);
+  if (event.key === 'ArrowRight') move(1);
+  if (event.key === ' ') { event.preventDefault(); flip(); }
+});
+setOrder(); renderAll();
+</script>
+</body>
+</html>
